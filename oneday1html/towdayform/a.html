@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2" cellspacing="0" cellpadding="0">
+    <caption>表格标题</caption>
+    <tr>
+        <th>名称</th>
+        <th>密码</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>ni</td>
+        <td>123</td>
+        <td>zizi</td>
+    </tr>
+</table>
+<!--cellspacing是内边框与外边框的距离
+    cellpadding是单元格距离-->
+<table border="2" cellspacing="0" cellpadding="20">
+    <caption>座次表</caption>
+    <tr>
+        <!--colspan是行合并，rowspan是列合并-->
+        <th colspan="10">html-56班座次表</th>
+    </tr>
+    <tr>
+        <!--align只能用于td-->
+        <th colspan="2" align="left" valign="top">门</th>
+        <th colspan="6"></th>
+        <th colspan="2">讲台</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td rowspan="4">过道</td>
+        <td>zz</td>
+        <td>xx</td>
+        <td>cc</td>
+        <td>vv</td>
+        <td rowspan="4">过道</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>bb</td>
+        <td>nn</td>
+        <td>mm</td>
+        <td>aa</td>
+        <td>ss</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>dd</td>
+        <td>ff</td>
+        <td>gg</td>
+        <td>hh</td>
+        <td>jj</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>

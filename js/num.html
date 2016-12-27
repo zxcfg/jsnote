@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var str="123";
+//    var num=Number(str);
+//    console.log(str);
+//    console.log(typeof str);
+//    console.log(num);
+//    console.log(typeof num);
+
+//isNaN返回的是true和false，如果不是数字返回true
+//如果是一个数字返回false
+//NaN不能与任何值进行比较 包括他本身
+//    console.log(isNaN(123));
+//    console.log(isNaN("hello"));
+//    console.log(isNaN(NaN===NaN));
+//    console.log(isNaN(5-2));
+
+
+
+
+   // var a;
+//结果是undefined
+ //   alert(a);
+
+//加引号  显示引号里面的内容
+   // alert("a");
+
+
+   // var b=3;
+//结果是3
+   // alert(b);
+//数值直接显示括号里的，结果为123
+   // alert(123);
+
+    var str="123";
+    var str1="abc";
+//强制转换成number型
+    var num=Number(str);
+    var num1=Number(str1);
+    console.log(num);//123
+    console.log(num1);//NaN
+//    console.log(typeof num);//强制转换成number型
+//    console.log(typeof num1);//强制转换成number型
+
+
+//    console.log(Number(false));//0
+//    console.log(Number(true));//1
+//    console.log(Number(undefined));//NaN
+//    console.log(Number(null));//0
+//    console.log(Number("1.2"));//1.2
+//    console.log(Number("12"));//12
+//    console.log(Number("1.2.3"));//NaN
+//    console.log(Number(50));//50
+//    console.log(Number(new Object()));//NaN
+    var b1= new Boolean("");
+    console.log(b1);
+
+    var i=4;
+    var k;
+    k=i++;
+    k=++i;
+    console.log(i);
+    console.log(k);
+
+
+</script>
+</body>
+</html>
