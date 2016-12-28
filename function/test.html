@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=init;
+        function init(){
+           var inp=document.getElementById("inp");
+            var div3=document.getElementsByTagName("div");
+            inp.oninput=function(){
+                div3[2].innerHTML=inp.value;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="test">div1</div>
+<div id="testId">div2</div>
+<div>div3</div>
+<input type="text" id="inp"/>
+<!--<script>-->
+<!--//    var test=document.getElementById("testId");-->
+<!--//    var div1=document.getElementsByClassName("test");-->
+    <!--var div3=document.getElementsByTagName("div");-->
+<!--//    console.log(test);-->
+<!--//    console.log(div1[0]);-->
+<!--//    console.log(div3[2]);-->
+<!--//    test.onclick=function(){-->
+<!--//        console.log(1);-->
+<!--//    }-->
+
+    <!--div3-->
+    <!---->
+<!--</script>-->
+
+
+
+</body>
+</html>
