@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<ul>-->
+    <!--<li>li1</li>-->
+    <!--<li>li2</li>-->
+    <!--<li>li3</li>-->
+    <!--<li>li4</li>-->
+<!--</ul>-->
+
+<script>
+//    var lis=document.getElementsByTagName("li");
+//    for (var i=0;i<4;i++){
+//        lis[i].onclick=function(){
+//            console.log(1);
+//        }
+//    }
+
+//    //求1到9的和
+//var j=0;
+//for (var i=1;i<10;i++){
+//    j+=i;
+//}
+//console.log(j);
+
+//求1到100的和
+//var j=0;
+//for (var i=1;i<=100;i++){
+//    j+=i;
+//}
+//console.log(j);
+
+//求1-99中的单数的和
+//var j=0;
+//for (var i=0;i<100;i++){
+//    if (i%2==1){
+//        j += i;
+//    }
+//}
+//console.log(j);
+
+
+    //求1-99中是3的倍数的数字和
+//var j=0;
+//for (var i=1;i<100;i++){
+//    if(i%3==0) {
+//        j += i;
+//        console.log(i);
+//
+//    }
+//}
+//console.log(j);
+
+
+
+//    var obj=[{
+//        name:"nizi",
+//        age:"10",
+//        city:"bj"
+//    },{
+//        name:"nizi1",
+//        age:"101",
+//        city:"bj1"
+//    }]
+//
+//    //for in 遍历对象属性
+//    var x,y;
+//        for(x in obj){
+//            for(y in obj[x])
+//            console.log(obj[x][y]);
+//        }
+
+//    varj=0;
+//    for(var i=0;i<10;i++){
+//        for(var j=0;j<10;j++){
+//
+//        }
+//    }
+
+//1到99，这一百个数字进行加和运算，设最终的和为sum
+//如果数字能够被3整除，则sum加上这个数字的值
+//如果数字不能被3整除，则sum在原来的基础上加1
+//最后弹出sum的值1683
+//    var sum=0;
+//    for (var i=1;i<100;i++){
+//        if (i%3==0){
+//            sum+=i
+//        }else{
+//            sum++;
+//        }
+//    }
+//    console.log(sum);
+
+//    var x;
+//    var person={
+//        name:"nizi",
+//        age:16,
+//        city:"bj"
+//    };
+//    for (x in person){
+//        console.log(x+"为:"+person[x]);
+//    }
+
+
+
+    var x;
+    var y;
+    var person=[
+        {
+            name:"nizi",
+            age:16,
+            city:"bj"
+        },{
+            name:"nizi1",
+            age:161,
+            city:"bj1"
+        } ,{
+            name:"nizi2",
+            age:162,
+            city:"bj2"
+        }
+    ];
+    for (x in person){
+        for (y in person[x]){
+            console.log(y+"为："+person[x][y]);
+        }
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
