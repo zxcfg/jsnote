@@ -1,0 +1,89 @@
+.div1 ,.div2 ,.div3 ,.div4{
+    width: 200px;
+    height: 50px;
+    border:1px solid red;
+    padding:20px;
+    display: block;
+    float: left;
+    margin:30px;
+}
+
+.div5 {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border:1px solid blue;
+    display: block;
+    float: left;
+    margin-left:50px;
+}
+
+.div6 {
+    width: 200px;
+    height: 202px;
+    display: block;
+    float: left;
+    margin-left:50px;
+}
+.div20 {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+.div7 {
+    width: 200px;
+    height: 202px;
+    margin-left:50px;
+    background-color: red;
+    display: block;
+    float: left;
+}
+
+.div8 {
+    width: 300px;
+    height: 202px;
+    display: block;
+    float: left;
+    margin-left:50px;
+    margin-right:100px;
+}
+.div9 {
+    width: 300px;
+    height: 420px;
+    display: block;
+    float: left;
+}
+#div23 {
+    width: 200px;
+    height: 20px;
+    background-color: red;
+    display: block;
+    float: left;
+    margin-left:50px;
+    margin-top:50px;
+    text-align: center;
+}
+#div24 {
+    width: 200px;
+    height: 400px;
+    background-color: gainsboro;
+    display: none;
+    float: left;
+    margin-left:50px;
+}
+
+.div10 {
+    width: 200px;
+    height: 200px;
+    display: block;
+    float: left;
+}
+.div11 {
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    display: block;
+    float: left;
+    margin:50px;
+}
