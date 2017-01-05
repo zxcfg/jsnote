@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var obj ={};
+//    var obj2 = {};
+//    obj.test = function () {
+//        alert(this == obj2);
+//    }
+//    obj.test.call(obj2);
+
+//    window.x = 100;
+//    var obj = {};
+//    obj.x = 1;
+//    obj.test = function (w,y,z) {
+//        alert(this.x+w+y+z);
+//    }
+    //obj.test(2,3,4);
+   // var arr = [2,3,4]
+    //obj.test.call(window,arr[0],arr[1],arr[2]);
+   // obj.test.apply(window,arr);
+  //  obj.test.call(window,2,3,4);
+   // obj.test.apply(window,[2,3,4]);
+   // obj.test.bind(window,2,3,4)();
+
+    var obj1 = {
+        name: "nizi"
+    };
+    var obj2 = {
+        getName: function() {
+            return this.name;
+        }
+    };
+    console.log(obj2.getName.call(obj1));
+    console.log(obj2.getName.apply(obj1));
+    console.log(obj2.getName.bind(obj1)());
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    我是div
+    <span>
+        我是span
+        <i>我是i</i>
+    </span>
+</div>
+<div id="div2">
+    我是div2
+</div>
+<input type="text" id="inp" value="wo"/>
+<input type="button" value="ok">
+<script>
+    var div1=document.getElementById("div1");
+    var div2=document.getElementById("div2");
+   // console.log(div1.innerHTML);
+    //div2.innerHTML+=div1.innerHTML;
+    //console.log(div1.outerHTML);
+    //console.log(div1.outerText);
+    //console.log(div1.outerText);
+
+    var inp=document.getElementById("input");
+    div2.innerHTML=inp.value;
+
+
+</script>
+
+</body>
+</html>
