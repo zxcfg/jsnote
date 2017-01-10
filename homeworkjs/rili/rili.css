@@ -1,0 +1,47 @@
+.major {
+    width: 306px;
+    background-color: gainsboro;
+    margin:0 auto;
+}
+#cy div{
+    width: 70px;
+    height: 60px;
+    margin:15px;
+    border:1px solid #424242;
+    background-color: #424242;
+    display: block;
+    float: left;
+    text-align: center;
+    padding-top:10px;
+    font-weight: bold;
+    color: white;
+}
+#cy div span{
+    font-size:20px;
+}
+#bounced div{
+    display: block;
+    height: 70px;
+    width: 270px;
+    font-size: 16px;
+    border:1px solid white;
+    background-color: ghostwhite;
+    float: left;
+    margin-left: 12px;
+    padding-left:10px;
+    padding-top:10px;
+    font-weight:bold;
+    display: none;
+}
+#bounced div dt{
+    font-size:20px ;
+    margin-bottom:10px;
+}
+#cy .yue {
+    background-color: white;
+    color: red;
+    font-weight: 700;
+}
+#bounced .fen{
+    display: block;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+        }
+        input{
+            font-size:20px;
+        }
+
+    </style>
+</head>
+<body>
+<input type="button" id="iet" value="左"/>
+<input type="button" id="ipt" value="停"/>
+<input type="button" id="iut" value="右"/>
+<div id="hz"></div>
+<script>
+    var iet=document.getElementById("iet");
+    var ipt=document.getElementById("ipt");
+    var iut=document.getElementById("iut");
+    var hz=document.getElementById("hz");
+    var cWidth=document.documentElement.clientWidth||document.body.clientWidth;
+    var hzWidth=hz.offsetWidth;
+    var time=null;
+    var num=0;
+    iet.onclick=function(){
+        clearInterval(time);
+        function decrease(){
+            num--;
+            if(num<=0){
+                clearInterval(time);
+                time=null;
+            }
+            hz.style.marginLeft=num+"px";
+        }
+        time=setInterval(decrease,5);
+    }
+    iut.onclick=function(){
+        clearInterval(time);
+        function add(){
+            num++;
+            if(num>=cWidth-hzWidth){
+                clearInterval(time);
+                time=null;
+            }
+            hz.style.marginLeft=num+"px";
+        }
+        time=setInterval(add,5);
+    }
+    ipt.onclick=function(){
+        clearInterval(time);
+        time=null;
+    }
+
+</script>
+</body>
+<html>

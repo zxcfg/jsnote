@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    var arr=["1px","12px","17px","8px","2px","21px"];
+    //    var arr6=arr.sort(function(a,b){return parseInt(a)-parseInt(b);});
+    //    console.log(arr6);
+    /*var arr1=arr.toString();
+     console.log(arr1);
+     var arr2=arr1.split("px,");
+     console.log(arr2);
+     var arr3=arr2.toString();
+     console.log(arr3);
+     var arr4=arr3.substring(0,14);
+     console.log(arr4);
+     var arr5=arr4.split(",");
+     console.log(arr5);
+     var arr6=arr5.sort(function(a,b){return a-b;});
+     console.log(arr6);*/
+
+
+    //  var arr=[1,2,3,4];
+    //    var sum=0;
+    //    for(var i=0;i<arr.length;i++){
+    //        sum+=arr[i];
+    //    }
+    //    console.log(sum);
+
+
+    /*var arr=[1,2,3,4];
+     var arr1=arr.reduce(function (pre,cur) {
+     return pre*cur;
+     });
+     console.log(arr1);
+     var arr2=arr.reduce(function (pre,cur) {
+     if(pre>cur){
+     return pre;
+     }else{
+     return cur;
+     }
+     });
+     console.log(arr2);
+     var max = a.reduce(function(pre,cur,inde,arr){return pre>cur?pre:cur;});
+
+
+     var matrix = [[1, 2],[3, 4],[5, 6]];
+     var matrix1 = matrix.reduce(function(pre,cur,index,matrix){
+     var arr9=matrix.toString();
+     var arr10=arr9.split(",");
+     return arr10;
+     });
+     console.log(matrix1);*/
+
+    //    var matrix = [[1, 2],[3, 4],[5, 6]];
+    //    var matrix1 = matrix.reduce(function(pre,cur,index,matrix){
+    //        return pre.concat(cur);
+    //    });
+    //    console.log(matrix1);
+
+
+    var arr = [{name: 'js1'}, {name: 'js2'}, {name: 'js3'}, {name: 'js4'}];
+    var arr1=arr.reduce(function(pre,cur,index,arr){
+        if (index == 1){
+            return pre.name+","+cur.name;
+        }else if (index ==arr.length-1){
+            return pre+"&"+cur.name;
+        }else {
+            return pre+","+cur.name;
+        }
+    });
+    console.log(arr1);
+
+
+
+//    var arr =  [ {name: 'brick11'}, {name: 'brick12'}, {name: 'brick13'} ]
+//    function carryBricks(arr){
+//        return arr.reduce(function(prev, current, index, array){
+//            if (index === 0){
+//                return current.name;
+//            }
+//            else if (index === array.length - 1){
+//                return prev + ' & ' + current.name;
+//            }
+//            else {
+//                return prev + ', ' + current.name;
+//            }
+//        }, '');
+//    }
+
+//    返回结果： brick11, brick12 & brick13
+//
+//    此时进一步延伸如果原来有一堆砖已经堆好，传入 initialValue值：
+//
+//    var arr =  [ {name: 'brick11'}, {name: 'brick12'}, {name: 'brick13'} ]
+//    var bricks = 'brick1, brick2, brick3, ' //已经堆好的砖
+//    function carryBricks(arr,bricks){
+//        return arr.reduce(function(prev, current, index, array){
+//            if (index === 0){
+//                return prev + current.name;
+//            }
+//            else if (index === array.length - 1){
+//                return prev + ' & ' + current.name;
+//            }
+//            return prev + ', ' + current.name;
+//        }, bricks);
+//    }
+</script>
+
+
+</body>
+</html>
