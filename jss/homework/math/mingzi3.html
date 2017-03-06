@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #zi{
+            font-size: 30px;
+        }
+        #butW{
+            width: 80px;
+            height: 34px;
+            font-size: 20px;
+            background-color: #fff;
+        }
+        #butE{
+            width: 80px;
+            height: 34px;
+            font-size: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="zi">下面有请:<span>枫彩</span>同学回答问题</div>
+<button type="button" id="butW">开始</button>
+<button type="button" id="butE">停</button>
+
+<script type="text/javascript">
+    window.onload=init();
+    function init(){
+        var span=document.getElementsByTagName("span")[0];
+        var butW=document.getElementById("butW");
+        var butE=document.getElementById("butE");
+        var arr=["枫彩","芳鸿","梦优","琪彤","蓓雪","慧云","优云","莉彩","萱彩","雅颖","彩凡","锦璟","锦锦","玲敏","祥栀","桂璟","芳雪","欣瑶","月慧","玉晨","凡梓","怡玥"];
+        console.log(arr.length);
+
+        var num=Math.floor(Math.random()*22);
+        butW.onclick=function(){
+            function ming(){
+                for(var i= 0;i<arr.length;i++){
+                    for(var j=0;j<=num.length;j++){
+                        if(num[j]==arr[i]){
+                            span[i].innerHTML=arr[i];
+                        }
+                    }
+                }
+
+            }
+            setInterval(ming,10);
+        }
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

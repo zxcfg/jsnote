@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style type="text/css">
+        .pic{width:255px;height:400px;margin:50px auto;border:1px solid red;overflow:hidden;}
+        .imgs{width:1020px;height:400px;}
+        .imgs img{width:255px;height:400px;float:left;}
+        .but{width:600px;height:50px;margin:10px auto;border:1px solid red;text-align:center;}
+        .but span{font-size:40px;padding-right:15px;cursor:pointer;}
+        .select{color:red;}
+        #direct{position:relative;width:255px;margin:0 auto;}
+        #direct,#direct li{list-style: none;font-size:40px;}
+        #direct li:first-child{position:absolute;left:0;top:0;}
+        #direct li:last-child{position:absolute;right:0;top:0;}
+    </style>
+    <script>
+        window.onload=init;
+        function init() {
+            var pic = document.getElementById("pic");
+            var imgs = pic.getElementsByTagName("img");
+            var but = document.getElementById("but");
+            var spans = but.getElementsByTagName("span");
+            var direct = document.getElementById("direct");
+            var lis = direct.getElementsByTagName("li");
+            var imgsWidth=imgs[0].offsetWidth;
+            var time = null;
+            var time2=null;
+            var autoNum=0;
+            function moveTo(startPos,endPos) {
+                if(time){
+                    clearInterval(time);
+                }
+                var startPos=startPos;
+                var endPos=endPos;
+                var stepMax=20;
+                var step=0;
+                var everyStep=(endPos-startPos)/stepMax;
+                function move() {
+                    step++;
+                    pic.scrollLeft+=everyStep;
+                    if(step==stepMax){
+                        clearInterval(time);
+                        pic.scrollLeft=endPos;
+                    }
+                    console.log(step);
+                    console.log(everyStep);
+                    console.log(pic.scrollLeft);
+                }
+                time = setInterval(move, 25);
+            }
+
+            function autoMove() {
+                autoNum++;
+                if(autoNum>=imgs.length){
+                    autoNum=0;
+                }
+                if(autoNum<0){
+                    autoNum=imgs.length-1;
+                }
+                btnColor();
+                moveTo(pic.scrollLeft,imgsWidth*autoNum);
+            }
+            function clock() {
+                time2=setInterval(autoMove,2000);
+            }
+            clock();
+            function btnColor() {
+                for(var i=0;i<spans.length;i++){
+                    spans[i].className="";
+                }
+                spans[autoNum].className="select";
+            }
+            function clearClock() {
+                if(time2){
+                    clearInterval(time2);
+                }
+            }
+            for(var i=0;i<spans.length;i++){
+                spans[i].onclick=function () {
+                    clearClock();
+                    for(var j=0;j<spans.length;j++){
+                        if(this==spans[j]){
+                            autoNum=j;
+                            btnColor();
+                            moveTo(pic.scrollLeft,imgsWidth*j);
+                            clock();
+                        }
+                    }
+                }
+            }
+            lis[0].onclick=function () {
+                clearClock();
+                autoNum-=2;
+                autoMove();
+                clock();
+            }
+            lis[1].onclick=function () {
+                clearClock();
+                autoMove();
+                clock();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="pic" class="pic">
+    <div class="imgs">
+        <img src="../../img/1.jpg">
+        <img src="../../img/2.jpg">
+        <img src="../../img/3.jpg">
+        <img src="../../img/4.jpg">
+    </div>
+</div>
+<ul id="direct">
+    <li>←</li>
+    <li>→</li>
+</ul>
+<div id="but" class="but">
+    <span class="">1</span>
+    <span class="">2</span>
+    <span class="">3</span>
+    <span class="select">4</span>
+</div>
+<!--<script>-->
+
+    <!--//思路：滚动，指的是图片需要从一个位置变化到另一个位置-->
+    <!--//我们希望能够更多的控制，所以普通的滚动已经满足不了我们的基本需求了。-->
+    <!--//例如单击某一个按钮，从当前按钮滚动到当前的图片-->
+    <!--//因此需要想另一个方法解决这个问题-->
+    <!--var time = null;-->
+    <!--//定义第一个计时器，用于实现自滚动效果（当前位置到新位置的运动过程）-->
+    <!--var pic = document.getElementById('pic');-->
+    <!--var pics = pic.getElementsByTagName('img');-->
+    <!--//通过id获取标签-->
+    <!--/*-->
+     <!--*scrollLeft为start的位置运动到值为end的位置-->
+     <!--*/-->
+    <!--function moveTo(startPos,endPos) {-->
+        <!--//防止发生计时器的重复调用-->
+        <!--if (time) {-->
+            <!--clearInterval(time);-->
+        <!--}-->
+        <!--var startPos = startPos;-->
+        <!--var endPos = endPos;-->
+        <!--//为何不是只需要endpos？而是需要startpos和endpos？-->
+        <!--//希望能够动态的发生变化，而不是直接的位置跳转-->
+        <!--var step = 0;-->
+        <!--var stepMax = 15;-->
+        <!--//希望动态的变化，因此设置步数，即每一张图切换需要多少步-->
+        <!--//第一个变量step用于进行当前步数，而第二个变量stepMax用于控制总步数-->
+        <!--var everyStep = (endPos-startPos)/stepMax;-->
+        <!--//计算出每一步走多远-->
+
+        <!--//当计算出每一步需要走多远，需要走几步时-->
+        <!--//就相当于知道了每次运动的距离以及计时器的成立条件-->
+        <!--time = setInterval(move,25);-->
+        <!--//计时器实现对运动函数调用（此时需要去定义一个空的计时器，另外，为防止重复调用计时器，需要在moveTo位置添加判断）-->
+        <!--/*-->
+         <!--*函数功能-->
+         <!--*/-->
+        <!--function move() {-->
+            <!--//每次左滚位置的距离发生变化-->
+            <!--startPos+=everyStep;-->
+            <!--//步数发生变化-->
+            <!--step++;-->
+            <!--//将左滚位置赋值给当前左滚距离，实现运动-->
+            <!--pic.scrollLeft=startPos;-->
+            <!--//临界条件控制，此处为可调用move函数10次，即执行10次move完成一次运动-->
+            <!--if (step==stepMax) {-->
+                <!--clearInterval(time);-->
+            <!--}-->
+        <!--}-->
+        <!--//这里的问题，能不能实现move函数的分离，将变量定义到外部？？？-->
+
+    <!--}-->
+    <!--//将这种人工传参的方法(moveTo(0,255*3))改为自动以及鼠标点击控制-->
+    <!--/*-->
+     <!--*控制自动运动-->
+     <!--*/-->
+    <!--var autoNum = 0;-->
+    <!--var time2 = null;-->
+    <!--//第二个计时器-->
+    <!--function autoMove() {-->
+        <!--autoNum++;-->
+        <!--//计数加1-->
+        <!--if (autoNum==pics.length) {-->
+            <!--autoNum = 0;-->
+        <!--}-->
+        <!--if (autoNum==-1) {-->
+            <!--autoNum=pics.length-1;-->
+        <!--}-->
+        <!--btncolor();-->
+        <!--moveTo(pic.scrollLeft,255*autoNum);-->
+        <!--//从当前位置，运动到相应整数倍位置-->
+    <!--}-->
+
+    <!--//让其能够不断滚动-->
+    <!--function clock() {-->
+        <!--time2 = setInterval(autoMove,1000);-->
+    <!--}-->
+    <!--//创建时钟函数，计时器采用多次调用的方法，同时在文档加载完成后，加载clock函数-->
+    <!--window.onload = clock;-->
+
+    <!--//添加单击数字，实现控制-->
+    <!--var btns = document.getElementById('but').getElementsByTagName('span');-->
+    <!--//获取到全部的控制标签-->
+    <!--//中间部分的控制标签（数字键）-->
+    <!--for (var i=0; i<btns.length; i++) {-->
+        <!--//为所有的“数字”标签绑定事件-->
+        <!--btns[i].onclick = function () {-->
+            <!--//当单击了按钮时，首先清除自动滚动的函数-->
+            <!--if (time2) {-->
+                <!--clearInterval(time2);-->
+            <!--}-->
+            <!--for (var j=0; j<btns.length; j++) {-->
+                <!--if (this==btns[j]) {-->
+                    <!--autoNum=j;-->
+                    <!--btncolor();-->
+                    <!--//对autoNum进行一下控制-->
+                    <!--//之所以进行控制，原因在于autoMove中进行了一次自增-->
+                    <!--//不添加此句的话，会造成在自动运动的函数中的索引值错乱-->
+                    <!--moveTo(pic.scrollLeft,255*j);-->
+                <!--}-->
+            <!--}-->
+            <!--//在运动完成后，在去执行clock函数，重新启动自动运动的计时器-->
+            <!--clock();-->
+        <!--}-->
+    <!--}-->
+    <!--//扩展，改变相应span的颜色（className）-->
+    <!--var direct = document.getElementById('direct').getElementsByTagName('li');-->
+
+    <!--//为左右按钮绑定事件-->
+    <!--direct[0].onclick = function () {-->
+        <!--//当单击了按钮时，首先清除自动滚动的函数-->
+        <!--if (time2) {-->
+            <!--clearInterval(time2);-->
+        <!--}-->
+        <!--autoNum-=2;//3-2+1=2,2-2+1=1,1-2+1=0,0-2+1=-1-->
+        <!--//此处思考为何是-2而不是-1-->
+        <!--//在autoMove中需要添加一个条件，为何？-->
+        <!--autoMove();-->
+        <!--clock();-->
+    <!--}-->
+    <!--direct[1].onclick = function () {-->
+        <!--//当单击了按钮时，首先清除自动滚动的函数-->
+        <!--if (time2) {-->
+            <!--clearInterval(time2);-->
+        <!--}-->
+        <!--autoMove();-->
+        <!--clock();-->
+    <!--}-->
+    <!--function btncolor(){-->
+        <!--for (var k=0; k<btns.length; k++) {-->
+            <!--btns[k].style.color='black';-->
+        <!--}-->
+        <!--btns[autoNum].style.color='red';-->
+    <!--}-->
+
+<!--</script>-->
+
+
+
+
+</body>
+</html>

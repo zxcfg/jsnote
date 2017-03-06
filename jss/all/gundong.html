@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #he{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="he"></div>
+<script type="text/javascript">
+    window.onload=init;
+    function init() {
+        var he=document.getElementById("he");
+        function zz() {
+            var he = document.getElementById('he');
+            var liulan = navigator.userAgent;
+            var firefox = liulan.indexOf("Firefox") > -1;
+            if (firefox) {
+                return "firefox";
+            } else {
+                return "iff";
+            }
+        }
+        var mm=zz();
+        if (mm=="firefox"){
+            he.addEventListener('DOMMouseScroll', function (ev) {//火狐 firefox
+                alert(ev.detail);
+            }, false);
+
+        }else{
+            he.addEventListener("mousewheel", function (ev) {//非火狐
+                var e = ev || window.event;
+                var
+                alert(e.wheelDelta);
+            }, false)
+
+        }
+
+
+    }
+
+
+
+
+            function bigimg(i){
+                var zoom = parseInt(i.style.zoom,10)||100;
+                zoom += event.wheelDelta / 12;
+                if(zoom > 0 )
+                    i.style.zoom=zoom+'%';
+                return false;
+            }
+
+
+
+
+</script>
+
+</body>
+</html>

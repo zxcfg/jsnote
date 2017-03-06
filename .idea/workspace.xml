@@ -2,124 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e728351-20df-4436-a6a9-ff2dec1fb5f3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ailetou" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/biaoshifu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/biaoshifu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/for/for.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/for/homework.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/for/while.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/function/fun.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/function/if.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/function/onclick.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/function/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/js1alert.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/num.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/object.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/tab/tab1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/tab/tab2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/this/js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/this/this.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/zuoyongyu/zuoyong.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js1alert.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/num.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/object.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/homework1215.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/homework2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/homework2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/hw1215.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/img/iconx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/img/iconz.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/img/shouye.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/overflow.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fiveday1215/ww1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fourday1213/background.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fourday1213/box.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/fourday1213/css2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/caipiao7.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/chuping8.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/css/ree.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/fazhan9.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/guanyu5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/hezuo4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/chupin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/eee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/gou.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/keji.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/lunbo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/pulian.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/img/wap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/jingji10.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/kaijiang11.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/lianxi12.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/pingguo13.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/shouye1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/shuju3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/yewu2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/yewu6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/homework1/zoushi14.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/baby.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/baidu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/bao.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/gug1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/gug2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/gug3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/hu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/kkl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/qw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/tao.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/tt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/we.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/yih1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/yih2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/img/zhi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/one/dome.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/one/dome1.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/one/dome2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/one/homework.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/one/vv.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/oneweek/exercise6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/classes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/compatible.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/csshack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/img/baby.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/img/gug2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/jiansmall.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sevenday1219/jiantou.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sixday/six1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/sixday/six2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/css1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/css2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/domecss1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/homework1212.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/homework1212.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/indent.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/xuanzeqikk.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/threedaycss/ziti.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/towdayform/a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/towdayform/form.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/towdayform/iframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oneday1html/towdayform/resume.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/bao.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/bao.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/img/kaimei.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/img/kuainv.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/img/remen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/img/si.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/zuoye/hw/img/xx.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/WebstormProjects/test/js/.idea/workspace.xml" afterPath="$USER_HOME$/WebstormProjects/test/js/.idea/workspace.xml" />
     </list>
     <ignored path="js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,58 +22,28 @@
     <favorites_list name="js" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.71088165">
-      <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.51789707">
-          <split-first>
-            <leaf>
-              <file leaf-file-name="shuxing.html" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.html">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.7894737">
-                      <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="45" />
-                      <folding>
-                        <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="shuxing.js" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.30808082">
-                      <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-                      <folding>
-                        <element signature="e#0#37#0" expanded="false" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="shuxing.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9894737">
-                  <caret line="88" column="1" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="for.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/for/for.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/jss/all/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -202,15 +55,15 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/WebstormProjects/test/js" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/for/homework.html" />
-        <option value="$PROJECT_DIR$/homeworkjs/thisjs/shuxing.css" />
-        <option value="$PROJECT_DIR$/homeworkjs/thisjs/shuxing.html" />
-        <option value="$PROJECT_DIR$/homeworkjs/thisjs/shuxing.js" />
+        <option value="$USER_HOME$/WebstormProjects/test/js/for/homework.html" />
+        <option value="$USER_HOME$/WebstormProjects/test/js/homeworkjs/thisjs/shuxing.css" />
+        <option value="$USER_HOME$/WebstormProjects/test/js/homeworkjs/thisjs/shuxing.html" />
+        <option value="$USER_HOME$/WebstormProjects/test/js/homeworkjs/thisjs/shuxing.js" />
       </list>
     </option>
   </component>
@@ -257,16 +110,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -275,7 +118,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/test/js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -286,8 +129,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/homeworkjs" />
-      <recent name="$PROJECT_DIR$/homeworkjs/thisjs/img" />
+      <recent name="$USER_HOME$/WebstormProjects/test/js/homeworkjs" />
+      <recent name="$USER_HOME$/WebstormProjects/test/js/homeworkjs/thisjs/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -311,6 +154,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -321,7 +169,7 @@
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
+      <working-directory>$USER_HOME$/WebstormProjects/test/js</working-directory>
       <pass-parent-env>true</pass-parent-env>
       <envs />
       <ui>bdd</ui>
@@ -346,25 +194,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16918188" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1683876" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11647727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -382,7 +230,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.js</url>
+          <url>file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.js</url>
           <line>79</line>
         </line-breakpoint>
       </breakpoints>
@@ -391,25 +239,9 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/for/homework.html">
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7222222">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9894737">
-          <caret line="88" column="1" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7894737">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="45" />
           <folding>
             <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -417,13 +249,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeworkjs/thisjs/shuxing.js">
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30808082">
+        <state vertical-scroll-proportion="0.0">
           <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/for/homework.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7222222">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7867133">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35067114">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/homeworkjs/thisjs/shuxing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0909091">
+          <caret line="88" column="1" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/for/for.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/test/jsnote/jss/all/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

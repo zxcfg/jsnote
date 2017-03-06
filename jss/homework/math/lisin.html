@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>周围运动</title>
+    <style>
+        body{
+            background-color:orange;
+        }
+        #move{
+            width:20px;
+            height:20px;
+            background-color:green;
+            position:absolute;
+            margin:100px auto 0;
+        }
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            var move=document.getElementById('move');
+            var l=0;
+            var m=true;
+            //圆周运动
+//            function time(){
+//                l++;
+//                move.style.marginTop=Math.sin(l*Math.PI/180)*100+'px';
+//                move.style.left=500+Math.cos(l*Math.PI/180)*100+'px';
+//            }
+//            setInterval(time,10);
+
+
+            function run(){
+//                l++;
+                //竖向
+                //move.style.marginTop=Math.sin(l*Math.PI/180)*100+'px';
+                //横向
+                //move.style.left=500+Math.cos(l*Math.PI/180)*100+'px';
+                //横向上下
+                var scrW=document.documentElement.clientWidth||document.body.clientWidth;
+                console.log(scrW);
+                if(m){
+                    l++;
+                    if(l>=1000){
+                        //clearInterval(time);
+                        m=false;
+                    }
+                }
+                else{
+                    l--;
+                    if(l<=30){
+                        //clearInterval(time);
+                        m=true;
+                    }
+                }
+                move.style.left=50+l+'px';
+                move.style.top=Math.sin(l*Math.PI/180)*100+'px';
+            }
+            time=setInterval(run,1);
+
+
+        }
+    </script>
+</head>
+<body>
+    <div id="move"></div>
+</body>
+</html>

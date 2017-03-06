@@ -41,7 +41,7 @@
     // 第三种
     for (var i = 0; i < btns.length; i++) {
         btns[i].onclick = (function(event) {
-            return function(evt) {
+            return function() {
                 output.innerText = 'Clicked ' + event;
             };
         })(events[i]);

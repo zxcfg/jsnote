@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="ds"></div>
+<script>
+    var ds=document.getElementById("ds");
+    var json1=[{"total": 30, "success": true,
+        "rows": [{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "1:0",
+            "status": "38'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 3,
+            "guestranking": 5,
+            "gamename": "亚冠",
+            "gameStatus":"进行中"
+        }, {
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "2:0",
+            "status": "60'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 3,
+            "guestranking": 5,
+            "gamename": "世界杯",
+            "gameStatus":"进行中"
+        }, {
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "1:0",
+            "status": "完场",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 3,
+            "guestranking": 5,
+            "gamename": "亚冠",
+            "gameStatus":"已完场"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        },{
+            "hometeam": "水原三星",
+            "guestteam": "浦和红钻",
+            "bf": "",
+            "status": "13:00开赛'",
+            "homephoto": "images/pic01.png",
+            "guestphoto": "images/pic02.png",
+            "homeranking": 1,
+            "guestranking": "2",
+            "gamename": "欧冠",
+            "gameStatus":"未开赛"
+        }]
+    }];
+//    var i;
+//    var j;
+//    var k;
+//    var html="";
+//    for(i in json1){
+//    var s=json1[i].rows;
+//        for(j in s){
+//            for(k in s[j]) {
+//                html += "<p>"+s[j][k]+"</p>";
+//                console.log(html);
+//            }
+//        }
+//    }
+//    ds.innerHTML=html;
+
+    var html="";
+    var jsn=json1[0].rows;
+    for (var i=0;i<jsn.length;i++){
+
+
+        html += "<p>"+jsn[i].hometeam+"</p>";
+        html += "<p>"+jsn[i].bf+"</p>";
+
+    }
+    ds.innerHTML=html;
+
+
+</script>
+
+</body>
+</html>

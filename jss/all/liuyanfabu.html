@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../reset.css" />
+    <style>
+        #ds{width: 400px;background: #ddd;margin: 15px auto;padding: 10px 10px; font-size: 18px;}
+        #ipt{width: 350px;height: 30px;font-size: 18px;}
+        #dt{margin-top: 15px;}
+        #txt{width: 352px;height: 200px;font-size: 18px;vertical-align: top;}
+        #shuzi{text-align: right;}
+        #but{width: 100px;height: 30px;background-color:red;margin-left: 45px;font-size: 18px;}
+        #xians{padding: 15px 42px;}
+        #uls li{ margin-top:10px;}
+        #uls p{padding: 30px 0;background:#fff;}
+        #del{color: red;width:100px;height:40px;background-color:#ccc;}
+    </style>
+</head>
+<body>
+<div id="ds">
+    <div id='dt'>评论:<textarea id="txt"></textarea></div>
+    <div id="shuzi"><span id="overText">还可以输入</span><span id="sp">200</span>个字</div>
+    <div id="fabu"><input type="button" id="but" value="发布留言" /></div>
+    <div id='xians'>
+        <h3>显示留言</h3>
+        <ul id="uls">
+            <!--<li>-->
+            <!--<p>评论</p>-->
+            <!--<input value="删除" id="del" type="button"/>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<p>评论</p>-->
+            <!--<input value="删除" id="del" type="button"/>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+<script src="../js1.js"></script>
+<script>
+    var txt=getId("txt");
+    var sp=getId("sp");
+    var fabu=getId("fabu");
+    var but=getId("but");
+    var uls=getId("uls");
+    var overText=getId("overText");
+    var del=getId("del");
+    but.onclick=function () {
+        var tt=txt.value;
+        var lis=document.createElement("li");
+        var p=document.createElement("p");
+        var lisText=document.createTextNode(tt);
+        var del=document.createElement("input");
+        del.value="删除";
+        del.id="del";
+        del.type="button";
+        p.appendChild(lisText);
+        lis.appendChild(p);
+        lis.appendChild(del);
+        if(tt!==""){
+            if(tt.length<=200){
+                uls.appendChild(lis);
+                if(uls.children.length!==0){
+                    uls.insertBefore(lis,uls.children[0]);
+                }
+                txt.value="";
+                sp.innerHTML=200;
+            }else{
+                alert("超出范围");
+            }
+        }else{
+            alert("不能为空");
+        }
+        del.onclick=function () {
+            uls.removeChild(this.parentNode);
+        }
+    }
+    function inputText(){
+        var len=txt.value.length;
+        var size=200;
+        size=size-len;
+        if(size<0){
+            overText.innerHTML="已超出";
+            sp.style.color="red";
+        }else{
+            overText.innerHTML="还可以输入";
+            sp.style.color="black";
+        }
+        function abs(a) {
+            return a>0?a:-a;
+        }
+        sp.innerHTML=abs(size);
+
+    }
+    var ie = window.ActiveXObject;
+    if(ie){
+        txt.onpropertychange=function () {
+            inputText();
+        }
+    }else{
+        txt.oninput=function () {
+            inputText();
+        }
+    }
+</script>
+</body>
+</html>

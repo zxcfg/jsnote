@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea id="ss" cols="30" rows="10"></textarea>
+<input type="button" value="过滤" id="btn">
+<textarea id="rr" cols="30" rows="10"></textarea>
+
+<script>
+    var btn=document.getElementById("btn");
+    var ss=document.getElementById("ss");
+    var rr=document.getElementById("rr");
+
+    ss.onkeyup=function(){
+        var reg=/o|d|c|q|x|M/ig;
+        ss.value=ss.value.replace(reg,"*");
+
+    }
+
+
+</script>
+</body>
+</html>

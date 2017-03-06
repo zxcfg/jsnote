@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        *{margin:0;padding:0;list-style:none;}
+        #ds{width:820px;margin:10px auto;overflow:hidden;}
+        ul{width:250px;margin:10px;float:left;}
+        ul li{width:248px;border:1px solid #000000;margin:10px;}
+    </style>
 </head>
 <body>
+<div id="ds">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<script type="text/javascript">
+    var ds=document.getElementById('ds');
+    var ous=ds.children;
+    function appli(){
+        var lis=document.createElement('li');
+        lis.style.height=(parseInt(Math.random()*300)+150)+'px';
+        var min=null;
+        var ul1=ous[0].offsetHeight;
+        var ul2=ous[1].offsetHeight;
+        var ul3=ous[2].offsetHeight;
+        if(ul1<ul2){
+            if(ul1<ul3){
+                min=ous[0];
+            }else{
+                min=ous[2];
+            }
+        }else{
+            if(ul2<ul3){
+                min=ous[1];
+            }else{
+                min=ous[2];
+            }
+        }
+        min.appendChild(lis);
+    }
+    for(var i=0;i<14;i++){
+        appli();
+    }
+    window.onscroll=function(){
+        var scrt=document.documentElement.scrollTop||document.body.scrollTop;
+        var wh=document.documentElement.clientHeight;
+        var dsh=ds.clientHeight;
+        if(scrt>=dsh-wh){
+            for(var i=0;i<14;i++){
+                appli();
+            }
+        }
+    }
+
+
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .pic{
+            width:255px;
+            height:400px;
+            margin-top:50px !important;
+            margin:0 auto;
+            border:1px solid red;
+            overflow:hidden;
+        }
+        .imgs{
+            width:1020px;
+            height:400px;
+        }
+        .imgs img{
+            width:255px;
+            height:400px;
+            float:left;
+            opacity:0;
+            position:absolute;
+        }
+        .imgs .opc {
+            opacity:1;
+        }
+        .but{
+            width:255px;
+            height:30px;
+            margin:0 auto;
+            background-color:white;
+            border:1px solid red;
+        }
+        .but span{
+            display: block;
+            float: left;
+            width: 50px;
+            height: 10px;
+            cursor:pointer;
+            border:1px solid red;
+            margin:5px;
+
+        }
+        .but em{
+            background-color: red;
+            display: none;
+        }
+        .select{
+            color:red;
+        }
+
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            var pic=document.getElementById("pic");
+            var imgs=document.getElementsByTagName("img");
+            var but = document.getElementById("but");
+            var spans = but.getElementsByTagName("span");
+            var ems = but.getElementsByTagName("em");
+            var time=null;
+
+            function moveTo(num){
+                if(time){
+                   clearInterval(time);
+                }
+                var emWidth=0;
+                function move(){
+                    emWidth+=1;
+                    if(emWidth>=50){
+                        emWidth=50;
+                        clearInterval(time);
+                        for(var i=0;i<spans.length;i++){
+                            spans[i].style.width=0;
+                        }
+                    }
+                    spans[num].style.width=emWidth;
+
+                }
+                time=setInterval(move,50);
+            }
+            time2=setInterval(moveTo,2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="pic" class="pic">
+    <div class="imgs">
+        <img src="../../img/1.jpg" alt="" class="opc"/>
+        <img src="../../img/2.jpg" alt=""/>
+        <img src="../../img/3.jpg" alt=""/>
+        <img src="../../img/4.jpg" alt=""/>
+    </div>
+</div>
+<div id="but" class="but">
+    <span class="select"><em></em></span>
+    <span><em></em></span>
+    <span><em></em></span>
+    <span><em></em></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.oncontextmenu=function(){
+        preDefault(ev);
+        console.log("hh");
+    };
+
+    document.onkeydown=function(ev){
+        var ev=ev||window.event;
+        var keycode=ev.keyCode||ev.width;
+        if(ev.ctrlKey&&keycode==67){
+            preDefault(ev);
+            console.log("zz");
+        }
+        if(keycode==37){
+            console.log("zz");
+        }else if(keycode==38){
+            console.log("ss");
+        }else if(keycode==39){
+            console.log("yy");
+        }else if(keycode==40){
+            console.log("xx");
+        }
+    };
+
+    function preDefault(ev){
+        var ev=ev||window.event;
+        if(ev.preventDefault){
+            ev.preventDefault();
+        }else{
+            ev.preventDefault();
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

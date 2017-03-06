@@ -3,8 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../../../reset.css">
+    <style>
+        #tabTitle li{
+            float: left;
+            width: 60px;
+            line-height: 40px;
+            background: orange;
+            text-align: center;
+        }
+        #tabContent{
+            clear: both;
+        }
+        #tabContent span {
+            width: 180px;
+            height: 200px;
+            background-color: gray;
+            display: none;
+        }
+        #tabContent .show{
+            display: block;
+        }
+        #tabTitle .select {
+            background-color: purple;}
+    </style>
 </head>
 <body>
+<ul id="tabTitle">
+    <li class="select">标题1</li>
+    <li>标题2</li>
+    <li>标题3</li>
+</ul>
+<div id="tabContent">
+    <span class="show">内容1</span>
+    <span>内容2</span>
+    <span>内容3</span>
+</div>
+
+<script>
+    var tabTitle=document.getElementById("tabTitle");
+    var tabContent=document.getElementById("tabContent");
+    var lis=tabTitle.getElementsByTagName("li");
+    var spans=tabContent.getElementsByTagName("span");
+    for(var i=0;i<lis.length;i++) {
+        lis[i].onclick = (function (i) {
+            function ff(){
+                console.log(i);
+                for(var j=0;j<lis.length;j++){
+                    lis[j].className = "";
+                    spans[j].className = "";
+                }
+                lis[i].className = "select";
+                spans[i].className = "show";
+            }
+            return ff;
+        })(i);
+    }
+
+
+</script>
 
 </body>
 </html>

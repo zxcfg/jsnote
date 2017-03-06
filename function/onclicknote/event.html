@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="outer">事件对象</div>-->
+<a href="www.baidu.com"></a>
+<form action="">
+    <input type="button" value="确定">
+</form>
+<script>
+
+    var outer=document.getElementById("outer");
+    outer.onclick=function (ev){
+        var evt=ev||window.event;
+        var targetElevent=event.target||event.srcElement;
+        console.log(evt);
+        console.log(targetElevent.innerHTML);
+        console.log(targetElevent.clientx);
+    }
+</script>
+</body>
+</html>

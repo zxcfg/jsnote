@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt1"/>
+<input type="text" id="txt2"/>
+<input type="button" id="btn1" value="设置"/>
+<input type="button" id="btn2" value="获得"/>
+<input type="button" id="btn3" value="删除"/>
+
+<script>
+    var txt1=document.getElementById("txt1");
+    var txt2=document.getElementById("txt2");
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+    var btn3=document.getElementById("btn3");
+    btn1.onclick=function sz(){
+        btn1.cookie="username="+encodeURIComponent(txt1.value);
+        tt1=decodeURIComponent(btn1.cookie);
+        txt1=tt1.split("=")[1];
+        console.log(txt1);
+        btn1.cookie="username="+encodeURIComponent(txt2.value);
+        tt2=decodeURIComponent(btn1.cookie);
+        txt2=tt2.split("=")[1];
+        console.log(txt2);
+
+    };
+
+    btn2.onclick=function(){
+
+
+
+
+    };
+    btn3.onclick=function sc(){
+        txt1.cookie="username="+encodeURIComponent(txt1.value)+";max-age=0";
+        txt2.cookie="username="+encodeURIComponent(txt2.value)+";max-age=0";
+        txt1.value="";
+        txt2.value="";
+
+    };
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{background-color:#999;}
+        .dv:hover{background-color:#999;}
+    </style>
+</head>
+<body>
+<input type="text" id="txt"/>
+<div id="ds"></div>
+<script>
+    var ds=document.getElementById("ds");
+    var divs=ds.getElementsByTagName("div");
+    txt.value="";
+    txt.onkeyup=function (e) {
+        if(e.keyCode==38||e.keyCode==40) {
+            return false;
+        }
+        if(e.keyCode==13){
+            window.location.href="https://www.baidu.com/s?wd="+txt.value;
+        }
+        txt.setAttribute("p",txt.value);
+        var xhr=new XMLHttpRequest();
+        xhr.open("get","baidu.php?keyword="+txt.value,true);
+        xhr.send(null);
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    var x=JSON.parse(xhr.responseText);
+                    console.log(x.s);
+                    var html="";
+                    for(var i=0;i<x.s.length;i++){
+                        html+="<div class='dv'>"+x.s[i]+"</div>";
+                    }
+                    ds.innerHTML=html;
+                    for(var k=0;k<divs.length;k++){
+                        divs[k].onclick=function () {
+                            for(var j=0;j<divs.length;j++){
+                                if(this==divs[j]){
+                                    txt.value=divs[j].innerHTML;
+                                    window.location.href="https://www.baidu.com/s?wd="+txt.value;
+                                }
+                            }
+                        };
+                        divs[k].onmouseover=function () {
+                            for(var j=0;j<divs.length;j++){
+                                if(this==divs[j]){
+                                    txt.value=divs[j].innerHTML;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    };
+    var num=-1;
+    txt.onkeydown=function (e) {
+        if(e.keyCode==38){
+            num--;
+            if(num<=-2){
+                num=divs.length-1;
+            }
+            for(var i=0;i<divs.length;i++){
+                divs[i].className="";
+            }
+            if(num>-1){
+                txt.value=divs[num].innerHTML;
+                divs[num].className="active";
+            }else{
+                txt.value=txt.getAttribute("p");
+            }
+        }
+        if(e.keyCode==40){
+            num++;
+            if(num>=divs.length){
+                num=-1;
+            }
+            for(var i=0;i<divs.length;i++){
+                divs[i].className="";
+            }
+            if(num>-1){
+                txt.value=divs[num].innerHTML;
+                divs[num].className="active";
+            }else{
+                txt.value=txt.getAttribute("p");
+            }
+        }
+    }
+</script>
+</body>
+</html>

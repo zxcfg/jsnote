@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .pic{width:255px;height:400px;margin:50px auto;border:1px solid red;position:relative;}
+        .imgs img{width:255px;height:400px;position:absolute;left:0;top:0;opacity:0;}
+        .imgs .opc{opacity: 1;}
+        .but{width:600px;height:50px;margin:10px auto;border:1px solid red;text-align:center;}
+        .but span{font-size:40px;padding-right:15px;cursor:pointer;}
+        .select{color:red;}
+        #direct{position:relative;width:255px;margin:0 auto;}
+        #direct,#direct li{list-style: none;font-size:40px;}
+        #direct li:first-child{position:absolute;left:0;top:0;}
+        #direct li:last-child{position:absolute;right:0;top:0;}
+    </style>
+    <script>
+        window.onload=init;
+        function init() {
+            var pic = document.getElementById("pic");
+            var imgs = pic.getElementsByTagName("img");
+            var but = document.getElementById("but");
+            var spans = but.getElementsByTagName("span");
+            var direct = document.getElementById("direct");
+            var lis = direct.getElementsByTagName("li");
+            var time = null;
+            var time2 = null;
+            var autoNum = 0;
+            function moveTo(num) {
+                var opc=0;
+                function move() {
+                    opc+=0.05;
+                    if(opc>=1){
+                        clearInterval(time);
+                        for(var i=0;i<imgs.length;i++){
+                            imgs[i].style.opacity=0;
+                        }
+                    }
+                    imgs[num].style.opacity=opc;
+                }
+                time=setInterval(move,25);
+            }
+            function autoMove() {
+                autoNum++;
+                if(autoNum==imgs.length){
+                    autoNum=0;
+                }
+                if(autoNum==-1){
+                    autoNum=imgs.length-1;
+                }
+                btnColor();
+                moveTo(autoNum);
+            }
+            time2=setInterval(autoMove,2000);
+            function btnColor() {
+                for(var i=0;i<spans.length;i++){
+                    spans[i].className="";
+                    imgs[i].style.zIndex=0;
+                }
+                spans[autoNum].className="select";
+                imgs[autoNum].style.zIndex=1;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="pic" class="pic">
+    <div class="imgs">
+        <img src="images/1.jpg" class="opc">
+        <img src="images/2.jpg">
+        <img src="images/3.jpg">
+        <img src="images/4.jpg">
+    </div>
+</div>
+<ul id="direct">
+    <li>←</li>
+    <li>→</li>
+</ul>
+<div id="but" class="but">
+    <span class="">1</span>
+    <span class="">2</span>
+    <span class="">3</span>
+    <span class="select">4</span>
+</div>
+
+
+</body>
+
+</html>

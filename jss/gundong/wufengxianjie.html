@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style>
+        #outer{
+            width: 1000px;
+            margin: 0 auto;
+            overflow-x: scroll;
+        }
+        #inner{
+            width: 2000px;
+        }
+        #inner img{
+            float: left;
+            width: 200px;
+        }
+        .bbt{
+            margin-left: 140px;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <img src="../../img/footboll.png" alt="1">
+        <img src="../../img/footboll.png" alt="2">
+        <img src="../../img/footboll.png" alt="3">
+        <img src="../../img/footboll.png" alt="4">
+        <img src="../../img/footboll.png" alt="5">
+        <img src="../../img/footboll.png" alt="6">
+        <img src="../../img/footboll.png" alt="7">
+        <img src="../../img/footboll.png" alt="8">
+        <img src="../../img/footboll.png" alt="8">
+        <img src="../../img/footboll.png" alt="8">
+    </div>
+</div>
+<div class="bbt">
+    <input type="button" id="inn" value="+">
+    <input type="button" id="itt" value="-">
+    <input type="button" id="iee" value="停">
+</div>
+<script>
+    var outer=document.getElementById("outer");
+    var inner=document.getElementById("inner");
+    var inn=document.getElementById("inn");
+    var itt=document.getElementById("itt");
+    var iee=document.getElementById("iee");
+    var img=document.getElementsByTagName("img");
+    var imgWidth=img[0].offsetWidth*5;
+    var time=null;
+    var move=true;
+    function imgAuto(){
+        if(move){
+            outer.scrollLeft++;
+            interval();
+            if(outer.scrollLeft==imgWidth){
+                move=false;
+            }
+        }else{
+            outer.scrollLeft--;
+            interval();
+            if(outer.scrollLeft==0){
+                move=true;
+            }
+        }
+    }
+
+    function interval(){
+        if(outer.scrollLeft%200==0){
+            clearInterval(time);
+            time=setTimeout(clock,500);
+        }
+    }
+
+    function clock(){
+        time=setInterval(imgAuto,10);
+    }
+    clock();
+
+
+
+    inn.onclick=function(){
+        clearInterval(time);
+        move=true;
+        clock();
+        };
+
+
+    itt.onclick=function(){
+        clearInterval(time);
+        move=false;
+        clock();
+        };
+
+    iee.onclick=function(){
+        clearInterval(time);
+        time=null;
+    };
+    outer.onmouseover=function(){
+        clearInterval(time);
+        time=null;
+
+    };
+    outer.onmouseout=function(){
+        imgAuto();
+        interval();
+        clock();
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var outer=document.getElementById("outer");
+//    var inner=document.getElementById("inner");
+//    var imgs=inner.getElementsByTagName("img");
+//    var imgWidth=imgs[0].offsetWidth*5;
+//    var time=null;
+//    var move=true;
+//    function imagesAuto() {
+//        if(move){
+//            outer.scrollLeft++;
+//            interval();
+//            if(outer.scrollLeft==imgWidth){
+//                move=false;
+//            }
+//        }else{
+//            outer.scrollLeft--;
+//            interval();
+//            if(outer.scrollLeft==0){
+//                move=true;
+//            }
+//        }
+//    }
+//    function interval() {
+//        if(outer.scrollLeft%200==0){
+//            clearInterval(time);
+//            time=setTimeout(clock,500);
+//        }
+//    }
+//    function clock() {
+//        time=setInterval(imagesAuto,10);
+//    }
+//    clock();
+
+
+</script>
+
+
+
+</body>
+</html>

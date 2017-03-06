@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--onkeyup:事件会在键盘按键被松开时发生-->
+<!--还有一个对应的事件是：-->
+<!--onkeydown：当按下一个键盘按键时触发事件-->
+<!--这是应用到asp.net的 TextBox控件 多行文本域的情况：-->
+<body>
+
+<input name="title" type="text" size="50" value="{$p.title}" maxlength="15" onkeyup="javascript:setShowLength(this, 15, 'cost_tpl_title_length');">
+<span class="red" id="cost_tpl_title_length">还可以输入15字数</span>
+
+js：
+代码如下:
+function setShowLength(obj, maxlength, id)
+{
+var rem = maxlength - obj.value.length;
+var wid = id;
+if (rem < 0){
+rem = 0;
+}
+document.getElementById(wid).innerHTML = "还可以输入" + rem + "字数";
+}
+<!--<form id="form1" runat="server">-->
+    <!--<div>-->
+
+        <!--<br />-->
+        <!--<asp:TextBox ID="TextBox1" runat="server" Height="121px" TextMode="MultiLine"-->
+                     <!--Width="317px" onkeyup="checkLength(this);"></asp:TextBox>-->
+        <!--&nbsp;-->
+        <!--限制字数为：10 剩余字数：<span id="sy" style="color:Red;">10</span>-->
+    <!--</div>-->
+<!--</form>-->
+<!--<SCRIPT LANGUAGE="JavaScript">-->
+    <!--&lt;!&ndash;//-->
+    <!--function textCounter(field, countfield, maxlimit) {-->
+        <!--// 函数，3个参数，表单名字，表单域元素名，限制字符；-->
+        <!--if (field.value.length > maxlimit)-->
+        <!--//如果元素区字符数大于最大字符数，按照最大字符数截断；-->
+            <!--field.value = field.value.substring(0, maxlimit);-->
+        <!--else-->
+        <!--//在记数区文本框内显示剩余的字符数；-->
+            <!--countfield.value = maxlimit - field.value.length;-->
+    <!--}-->
+    <!--//&ndash;&gt;-->
+<!--</SCRIPT>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form name=myform action="">-->
+    <!--<textarea name="message" cols="28" rows="5" onKeyDown="textCounter(message,remLen,6);" onKeyUp="textCounter(message,remLen,6);"></textarea>-->
+    <!--您还可以输入:<input name="remLen" type="text" value="6" size="5" readonly="readonly">个字符-->
+<!--</form>-->
+<!--<script type="text/javascript">-->
+    <!--function checkLength(which) {-->
+        <!--var maxChars = 10; //-->
+        <!--if (which.value.length > maxChars)-->
+        <!--{-->
+            <!--alert("您出入的字数超多限制!");-->
+            <!--// 超过限制的字数了就将 文本框中的内容按规定的字数 截取-->
+            <!--which.value = which.value.substring(0,maxChars);-->
+            <!--return false;-->
+        <!--}-->
+        <!--else-->
+        <!--{-->
+            <!--var curr = maxChars - which.value.length; //250 减去 当前输入的-->
+            <!--document.getElementByIdx_x("sy").innerHTML = curr.toString();-->
+            <!--return true;-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+
+
+//	he.onmousewheel=function (ev){//非火狐
+//		var e=ev||window.event;
+//		alert(e.wheelDelta);
+//	}
+
+
+</body>
+</html>

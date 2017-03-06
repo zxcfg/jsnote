@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #bj{
+            font-size:30px;
+            margin-top:30px;
+        }
+        #xz{
+            margin-top: 20px;
+            font-size:20px;
+        }
+        #cs{
+            padding:20px;
+            height: 40px;
+            width: 450px;
+            margin-top:10px;
+            background-color: gainsboro;
+            display: none;
+        }
+        #cs li{
+            list-style: dotted;
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="bj">北京</div>
+<div id="xz">选择城市</div>
+<div id="cs">
+    <li>北京</li>
+    <li>上海</li>
+    <li>广州</li>
+    <li>深圳</li>
+    <li>南京</li>
+    <li>武汉</li>
+    <li>天津</li>
+</div>
+<script>
+    var div=document.getElementsByTagName("div");
+    var bj=document.getElementById("bj");
+    var xz=document.getElementById("xz");
+    var cs=document.getElementById("cs");
+    var lis=document.getElementsByTagName("li");
+    div[1].addEventListener("click",dk,false);
+    function dk(){
+        cs.style.display="inherit";
+    }
+    function gb(){
+        cs.style.display="none";
+    }
+    lis[0].onclick=function(ev){
+        var evt=ev||window.event;
+//        var targetElevent=event.target||event.srcElement;
+        console.log(evt);
+//        console.log(targetElevent.innerHTML);
+//        ev.target.innerHTML=bj.innerHTML;
+//        console.log(ev.target.innerHTML);
+//        ev.target.style.color="red";
+//        setTimeout(gb,1000);
+//        gb();
+    };
+
+
+
+
+
+//    div[1].addEventListener("click",dk,false);
+//    function dk(){
+//        cs.style.display="inherit";
+//    }
+//    function gb(){
+//        cs.style.display="none";
+//    }
+//    for(var i=0;i<lis.length;i++){
+//        lis[i].addEventListener("click",dj,false);
+//    }
+//    function dj(){
+//        for (var i=0;i<lis.length;i++){
+//            for(var i=0;i<lis.length;i++){
+//                if(this==lis[i]) {
+//                    lis[i].style.color = "red";
+//                    bj.innerHTML = lis[i].innerHTML;
+//                    console.log(bj.innerHTML);
+//                }else{
+//                    lis[i].style.color = "black";
+//                }
+//            }
+//            setTimeout(gb,1000);
+//        }
+//    }
+
+
+//    xz.onclick=function(ev){
+  //  ev.target.innerHTML
+//        cs.style.display="inherit";
+//    };
+//    function gb(){
+//        cs.style.display="none";
+//    }
+
+//    for (var i=0;i<lis.length;i++){
+//        lis[i].onclick=function(){
+//            for(var i=0;i<lis.length;i++){
+//                if(this==lis[i]) {
+//                    lis[i].style.color = "red";
+//                    bj.innerHTML = lis[i].innerHTML;
+//                    console.log(bj.innerHTML);
+//                }else{
+//                    lis[i].style.color = "black";
+//                }
+//            }
+//            setTimeout(gb ,1000);
+//        }
+//
+//    }
+
+
+</script>
+</body>
+</html>

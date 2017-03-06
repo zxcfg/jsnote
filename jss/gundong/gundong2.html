@@ -3,8 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        div{
+            margin-top:30px;
+            height: 200px;
+            width: 50px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
+<div id="pt"></div>
+<script>
+    var pt=document.getElementById("pt");
+    var ptWidth=pt.offsetWidth;
+    var time=null;
+    var num=50;
+    var move=true;
+    pt.onclick=function() {
+        clearInterval(time);
+        function add(){
+            if(move){
+                num++;
+                if(num>=700){
+                    clearInterval(time);
+                    move=false;
+                }
+                pt.style.width = num+"px";
+            }else{
+                num--;
+                if(num<=50){
+                    move=true;
+                }
+                pt.style.width=num+"px";
+            }
+        }
+        time=setInterval(add,10);
+    };
 
+//    pt.onclick=function() {
+//        clearInterval(time);
+//        function jsq() {
+//            num++;
+//            if (num == ptWidth) {
+//                clearInterval(time);
+//                time = null;
+//            }
+//            pt.style.width = "700px";
+//        }
+//    };
+//    pt.onclick=function() {
+//        function jian(){
+//            num--;
+//            if(num>50){
+//                clearInterval(time);
+//                time=null;
+//            }
+//            pt.style.width="50px";
+//        }
+//        time=setInterval(jian,10);
+//    };
+
+
+
+
+
+
+
+
+
+//        function jsq(){
+//            num++;
+//            if(num==ptWidth){
+//                clearInterval(time);
+//                time=null;
+//            }
+//            pt.style.width=num+"px";
+//        }
+//        time=setInterval(jsq,10);
+//        function jian(){
+//            num--;
+//            if(num>50){
+//                clearInterval(time);
+//                time=null;
+//            }
+//            pt.style.width=num+"px";
+//        }
+//        time=setInterval(jian,10);
+   // }
+
+
+//    function showDiv() {
+//        showIntervalId=setInterval("inc()", 100);
+//    }
+//    function inc() {
+//        var div1 = document.getElementById("pt");
+//        var oldwidth = div1.style.width;
+//        oldwidth = parseInt(oldwidth, 10);
+//        if (oldwidth >= 200) {
+//            clearInterval(showIntervalId);//停止计时器
+//        }
+//        oldwidth += 10;
+//        div1.style.width = oldwidth + "px";
+//    }
+
+</script>
 </body>
 </html>

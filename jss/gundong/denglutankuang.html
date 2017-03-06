@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>middle</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width: 200px;
+            height:200px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:deepskyblue;
+        }
+        .outer{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:black;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div id="box"></div>
+</div>
+<script>
+    var box=document.getElementById("box");
+    var outer=document.getElementsByClassName("outer")[0];
+    var boxwidth=box.clientWidth;
+    var boxheight=box.clientHeight;
+    //        var time=null;
+    function wh(){
+        setInterval(function () {
+            var wheight=document.documentElement.clientHeight || document.body.clientHeight;
+            var wwidth=document.documentElement.clientWidth || document.body.clientWidth;
+            var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+            box.style.left=(wwidth-boxwidth)/2+"px";
+            box.style.top=(wheight-boxheight)/2+scrollTop+"px";
+        },1)
+    }
+    wh();
+</script>
+</body>
+</html>

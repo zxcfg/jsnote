@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #kuang{
+            width:324px;
+            background:#E9E9E9;
+            margin:30px auto;
+            overflow:hidden;
+            padding:10px;
+        }
+        #wa div{
+            width:78px;
+            height:78px;
+            background:#424242;
+            float:left;
+            margin-left:21px;
+            margin-top:21px;
+            border:1px #424242 solid;
+            text-align:center;
+            cursor:pointer;
+            color:#fff;
+        }
+        #wa div:hover{
+            color:#E84C81;
+            background:#fff;
+        }
+        #wa .select{
+            color:#E84C81;
+            background:#fff;
+
+        }
+        #wa div p{
+            font-family:"楷体";
+            font-size:25px;
+            display:inline-block;
+            margin-top:10px;
+        }
+        #xia{
+            width:281px;
+            height:120px;
+            border:1px #fff solid;
+            float:left;
+            margin:21px auto;
+            background:#F1F1F1;
+            margin-left:21px;
+        }
+        #xia p{
+            font-size:26px;
+            font-weight:bold;
+            font-family:"楷体";
+            text-indent:20px;
+            line-height:56px;
+        }
+        #xia em{
+            font-style:normal;
+            color:#E84C81;
+        }
+        #xia span{
+            font-size:21px;
+            margin-left:18px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<div id="kuang">
+    <div id="wa">
+        <div class="select"><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+        <div><P></P></div>
+    </div>
+    <div id="xia">
+        <p><em>1</em>月活动</p>
+        <span>去逛街</span>
+    </div>
+</div>
+<script type="text/javascript">
+    var wa=document.getElementById("wa");
+    var divs=wa.getElementsByTagName("div");
+    var ps=wa.getElementsByTagName("P");
+    var xia=document.getElementById("xia");
+    var arr1 = [[1,"JAN"],[2,"FEB"],[3,"MAR"],[4,"APR"],[5,"MAY"],[6,"JUN"],[7,"JUL"],[8,"AUG"],[9,"SEP"],[10,"OCT"],[11,"NOV"],[12,"DEC"]];
+    var arr2 = ['去逛街','睡觉','打台球','打篮球','踢足球','吃饭','吃烧烤','吃烤鱼','吃小吃','读书','上网','玩游戏'];
+    for(var i=0;i<divs.length;i++){
+        for(var j=0;j<arr1[i].length;j++) {
+            console.log(arr1[i][j]);
+            ps[i].innerHTML+=arr1[i][j]+"<br/>";
+        }
+        divs[i].onmouseover=function () {
+            for(var k=0;k<divs.length;k++){
+                if(this==divs[k]){
+                    divs[k].className="select";
+                    xia.innerHTML='<p><em>'+arr1[k][0]+'</em>月活动</p><span>'+arr2[k]+'</span>';
+                }else{
+                    divs[k].className="";
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

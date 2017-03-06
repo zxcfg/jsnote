@@ -5,6 +5,45 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+    账号:<input type="text" id="txt1"><br>
+    密码:<input type="text" id="txt2"><br>
+    记住密码:<input type="checkbox"><br>
+    <input type="button" value="提交" id="btn"/>
+</div>
+<script>
+    var txt1=document.getElementById("txt1");
+    var txt2=document.getElementById("txt2");
+    var span=document.getElementsByTagName("span");
+    var btn=document.getElementById("btn");
+    function setCookie(keys,values,days) {
+        document.cookie=keys+"="+values+";max-age="+days*24*60*60;
+    }
+    btn.onclick=function () {
+        setCookie("username",txt1.value,3);
+        setCookie("password",txt2.value,3);
+    };
+    function getCookie(keys) {
+        var arr=document.cookie.split("; ");
+        for(var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            console.log(arr2);
+            if(arr2[0]==keys){
+                return arr2[1];
+            }
+        }
+        return false;
+    }
+    txt1.onblur=function () {
+        if(txt1.value==getCookie("username")){
+            txt2.value=getCookie("password");
+        }
+    }
+
+
+
+
+</script>
 
 </body>
 </html>

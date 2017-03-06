@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+            width: 800px;
+            height: 500px;
+            margin:0 auto;
+            border:1px solid red;
+            position: relative;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left:100px;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="box">
+    </div>
+</div>
+<script>
+    var box=document.getElementById("box");
+    var time=null;
+    var clientW=main.clientWidth-box.offsetWidth;
+    var clientH=main.clientHeight-box.offsetHeight;
+    var t=false,r=false,b=false,l=false;
+    setInterval(test,10);
+    function test(){
+        if(b){
+            box.style.top=box.offsetTop+5+"px";
+            if(box.offsetTop>clientH){
+               box.style.top=clientH+"px";
+            }
+        }
+        if(l){
+            box.style.left=box.offsetLeft-5+"px";
+            if(box.offsetLeft<0){
+                box.style.left=0+"px";
+            }
+        }
+        if(t){
+            box.style.top=box.offsetTop-5+"px";
+            if(box.offsetTop<0){
+                box.style.top=0+"px";
+            }
+        }
+        if(r){
+            box.style.left=box.offsetLeft+5+"px";
+            if(box.offsetLeft>clientW){
+                box.style.left=clientW+"px";
+            }
+        }
+        document.onkeydown=function (event){
+            var ev=event||window.event;
+            var keycode=ev.keyCode||ev.which;
+            if(keycode==37){
+                l=true;
+            }else if(keycode==38){
+                t=true;
+            }else if(keycode==39){
+                r=true;
+            }else if(keycode==40){
+                b=true;
+            }
+        }
+        document.onkeyup=function (event){
+            var ev=event||window.event;
+            var keycode=ev.keyCode||ev.which;
+            if(keycode==37){
+                l=false;
+            }else if(keycode==38){
+                t=false;
+            }else if(keycode==39){
+                r=false;
+            }else if(keycode==40){
+                b=false;
+            }
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var main=document.getElementById("main");
+//    var drag=document.getElementById("drag");
+//    document.oncontextmenu=function(){
+//        preDefault(event);
+//        console.log("hh");
+//    };
+//    drag.onkeydown=function(event){
+//        var ev=event||window.event;
+//        var keycode=ev.keyCode||ev.width;
+//        var mouseX=main.clientWidth-drag.offsetWidth;
+//        var mouseY=main.clientHeight-drag.offsetHeight;
+//        var time=null;
+//        var dragL=0;
+//        var dragH=0;
+//        function you(){
+//            dragL++;
+//            if(dragL<=mouseX){
+//                dragL=mouseX;
+//                clearInterval(time);
+//            }
+//        }
+//        function zuo(){
+//            dragL--;
+//            if(dragL<=0){
+//                dragL=0;
+//                clearInterval(time);
+//            }
+//        }
+//        function shang(){
+//            dragH++;
+//            if(dragH<=mouseY){
+//                dragH=mouseY;
+//                clearInterval(time);
+//            }
+//        }
+//        function xia(){
+//            dragH--;
+//            if(dragH<=0){
+//                dragH=0;
+//                clearInterval(time);
+//            }
+//        }
+//
+//        //左
+//        if(keycode==37){
+//            setInterval(zuo,200);
+//        }
+//        //上
+//        else if(keycode==38){
+//            setInterval(shang,200);
+//        }
+//        //右
+//        else if(keycode==39){
+//            setInterval(you,200);
+//        }
+//        //下
+//        else if(keycode==40){
+//            setInterval(xia,200);
+//        }
+//        //左上
+//        else if(keycode==37&&keycode==38){
+//
+//        }
+//        //右上
+//        else if(keycode==38&&keycode==39){
+//
+//        }
+//        //右下
+//        else if(keycode==39&&keycode==40){
+//
+//        }
+//        //左下
+//        else if(keycode==37&&keycode==40){
+//
+//        }
+//        drag.style.left=dragL+"px";
+//        drag.style.top=dragH+"px";
+//
+//    };
+//    function preDefault(ev){
+//        var ev=ev||window.event;
+//        if(ev.preventDefault){
+//            ev.preventDefault();
+//        }else{
+//            ev.preventDefault();
+//        }
+//    }
+
+
+
+
+//    drag.onmousedown=function(event){
+//        var ev=event||window.event;
+//        var keycode=ev.keyCode||ev.width;
+//        var tempX=ev.clientX-drag.offsetLeft;
+//        var tempY=ev.clientY-drag.offsetTop;
+//
+//
+//        drag.onkeydown=function(event){
+//            var ev=event||window.event;
+//            var endX=ev.clientX-tempX;
+//            var endY=ev.clientY-tempY;
+//            var xpX=true;
+//            var xpY=true;
+//            var mouseX=main.clientWidth-drag.offsetWidth;
+//            var mouseY=main.clientHeight-drag.offsetHeight;
+//            if(endX>=mouseX){
+//                endX=mouseX;
+//                if(keycode==37){
+//                    xpX--;
+//                }else if(keycode==40){
+//                    xpY--;
+//                }
+//
+//            }else if(endX<=0){
+//                endX=0;
+//            }else if(endY>=mouseY){
+//                endY=mouseY;
+//            }else if(endY<=0){
+//                endY=0;
+//            }
+//            drag.style.left=endX+"px";
+//            drag.style.top=endY+"px";
+//        }
+//    };
+    document.onkeyup=function (){
+        document.onkeydown=null;
+    }
+
+
+</script>
+
+</body>
+</html>

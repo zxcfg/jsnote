@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            margin:0;
+            padding: 0;
+            overflow-x:scroll;
+        }
+        .deng{
+            font-size: 20px;
+            color: red;
+            float: right;
+        }
+        .tan {
+            width: 400px;
+            height: 400px;
+            background-color: gainsboro;
+            border:2px solid gray;
+            padding:20px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
+<div class="deng">登录</div>
+<div class="tan">
+    <div>
+        账号:
+        <input type="text" id="zh" value="">
+    </div>
+    <div>
+        密码:
+        <input type="text" id="mm" value="">
+    </div>
+    <input type="button" id="dl" value="登录">
+    <input type="button" id="zc" value="注册">
+</div>
+
+<script>
+    var deng=document.getElementsByClassName("deng");
+    var tan=document.getElementsByClassName("tan");
+    deng[0].onclick=function(){
+        tan[0].style.display="block";
+    }
+
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <span></span>
+    <span>:</span>
+    <span></span>
+    <span>:</span>
+    <span></span>
+</div>
+<script>
+    var spans=document.getElementsByTagName("span");
+    function sj(){
+        var date=new Date();
+        var h=date.getHours();
+        var m=date.getMinutes();
+        var s=date.getSeconds();
+        spans[0].innerHTML=23-h;
+        spans[2].innerHTML=(59-m)<10?"0"+(59-m):(59-m);
+        spans[4].innerHTML=(59-s)<10?"0"+(59-s):(59-s);
+    }
+    setInterval(sj,1000);
+
+</script>
+
+</body>
+</html>

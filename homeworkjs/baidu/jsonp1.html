@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#sd{width: 400px;margin: 40px auto 0;}
+			#txt{width: 400px;height: 38px;}
+			#ds{width: 400px;background: #ddd;margin: 0 auto;}
+			.active{background-color:#999;}
+			.dv:hover{background-color:#999;}
+		</style>
+	</head>
+	<body>
+		<div id="sd">
+			<input type="text" id="txt" />
+		</div>
+		<div id="ds">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ds=document.getElementById("ds");
+		var divs=ds.getElementsByTagName("div");
+		function jp(json){
+			console.log(json);
+			var html="";
+			for(var i=0;i<json.s.length;i++){
+				html+="<div class='dv'>"+json.s[i]+"</div>";
+			}
+			ds.innerHTML=html;
+			for(var k=0;k<divs.length;k++){
+				divs[k].onclick=function () {
+					for(var j=0;j<divs.length;j++){
+						if(this==divs[j]){
+							txt.value=divs[j].innerHTML;
+							window.location.href="https://www.baidu.com/s?wd="+txt.value;
+						}
+					}
+				};
+				divs[k].onmouseover=function () {
+					for(var j=0;j<divs.length;j++){
+						if(this==divs[j]){
+							txt.value=divs[j].innerHTML;
+						}
+					}
+				}
+			}
+		}
+		txt.onkeyup=function (e){
+			if(e.keyCode==38||e.keyCode==40) {
+				return false;
+			}
+			if(e.keyCode==13){
+				window.location.href="https://www.baidu.com/s?wd="+txt.value;
+			}
+			var url='http://suggestion.baidu.com/su?wd='+txt.value+'&cb=jp';
+			var script=document.createElement('script');
+			script.setAttribute("src",url);
+			txt.setAttribute("p", txt.value);
+			document.body.appendChild(script);
+			document.body.removeChild(script);
+		}
+
+
+		var num=-1;
+		txt.onkeydown=function (e) {
+			if(e.keyCode==38){
+				num--;
+				if(num<=-2){
+					num=divs.length-1;
+				}
+				for(var i=0;i<divs.length;i++){
+					divs[i].className="";
+				}
+				if(num>-1){
+					txt.value=divs[num].innerHTML;
+					divs[num].className="active";
+				}else{
+					txt.value=txt.getAttribute("p");
+				}
+			}
+			if(e.keyCode==40){
+				num++;
+				if(num>=divs.length){
+					num=-1;
+				}
+				for(var i=0;i<divs.length;i++){
+					divs[i].className="";
+				}
+				if(num>-1){
+					txt.value=divs[num].innerHTML;
+					divs[num].className="active";
+				}else{
+					txt.value=txt.getAttribute("p");
+				}
+			}
+		}
+	</script>
+</html>

@@ -5,6 +5,135 @@
     <title>Title</title>
 </head>
 <body>
+<!--<div id="ds">-->
+
+<!--</div>-->
+
+<input type="text" id="uname">
+<input type="text" id="psw">
+<input type="button" value="ok" id="ok">
+<script>
+//    var ds=document.getElementById("ds");
+//    var xhr=new XMLHttpRequest();
+//    xhr.open('get',"text1.txt?"+Math.random*10000,true);
+//    xhr.send(null);
+//    xhr.onload=function(){
+//        console.log(xhr.responseText);
+//        var x=xhr.responseText;
+//        ds.innerHTML=x;
+//    }
+
+
+//    var ds=document.getElementById("ds");
+//    var xhr=new XMLHttpRequest();
+//    xhr.open('get',"test.xml?"+Math.random*10000,true);
+//    xhr.send(null);
+//    xhr.onreadystatechange=function(){
+//        if(xhr.readyState==4){
+//            if(xhr.status==200){
+//                //console.log(xhr.responseXML);
+//                var x=xhr.responseXML;
+//                console.log(x.getElementsByTagName("title")[0].innerHTML);
+//            }else{
+//                console.log(xhr.status);
+//
+//            }
+//        }
+//
+//    }
+
+
+
+//    var ds=document.getElementById("ds");
+//    var xhr=new XMLHttpRequest();
+//    xhr.open('get',"test1.json?"+Math.random*10000,true);
+//    xhr.send(null);
+//    xhr.onreadystatechange=function(){
+//        if(xhr.readyState==4){
+//            if(xhr.status==200){
+//                //console.log(xhr.responseText);
+//                var x=JSON.parse(xhr.responseText);
+//                console.log(x.title[0]);
+//            }else{
+//                console.log(xhr.status);
+//
+//            }
+//        }
+//
+//    }
+
+
+
+//    var ds=document.getElementById("ds");
+//    var xhr=new XMLHttpRequest();
+//    xhr.open('get',"zh.html?"+Math.random*10000,true);
+//    xhr.send(null);
+//    xhr.onreadystatechange=function(){
+//        if(xhr.readyState==4){
+//            if(xhr.status==200){
+//                //console.log(xhr.responseText);
+//                var x=xhr.responseText;
+//                console.log(x);
+//                ds.innerHTML=x;
+//                var script=document.getElementsByTagName("script");
+//                eval(script.innerHTML);
+//            }else{
+//                console.log(xhr.status);
+//
+//            }
+//        }
+//
+//    }
+
+
+//    var ds=document.getElementById("ds");
+//    var xhr=new XMLHttpRequest();
+//    xhr.open('get',"test.php"+Math.random*10000,true);
+//    xhr.send(null);
+//    xhr.onreadystatechange=function(){
+//        if(xhr.readyState==4){
+//            if(xhr.status==200){
+//                console.log(xhr.responseText);
+//                var x=xhr.responseText;
+//                console.log(x);
+////                ds.innerHTML=x;
+////                var script=document.getElementsByTagName("script");
+////                eval(script.innerHTML);
+//            }else{
+//                console.log(xhr.status);
+//
+//            }
+//        }
+//
+//    }
+
+
+    var ok=document.getElementById("ok");
+    ok.onclick=function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open('get',"form.php?+username="+uname.value+"&password="+psw.value,true);
+        xhr.setRequestHeader('Content-Type',"application/x-www-form-urlencoded");
+        xhr.send(null);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    console.log(xhr.responseText);
+                    var x=xhr.responseText;
+                    console.log(x);
+                }else{
+                    console.log(xhr.status);
+
+                }
+            }
+
+        }
+    }
+
+
+
+
+
+</script>
 
 </body>
 </html>

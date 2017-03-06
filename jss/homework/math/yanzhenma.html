@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="tx" value="请输入验证码">
+<input type="button" value="2345" id="bv">
+<input type="button" value="验证" id="yz">
+<script>
+     window.onload=init;
+    function init(){
+        var tx=document.getElementById("tx");
+        var bv=document.getElementById("bv");
+        var yz=document.getElementById("yz");
+        function yan() {
+            bv.onclick = function () {
+                var num = Math.floor(Math.random() * 8999 + 1000);
+                bv.value = num;
+
+            };
+        }
+        yan();
+        function zheng() {
+            yan();
+            yz.onclick = function () {
+                if (tx.value == bv.value) {
+                    alert("验证正确");
+                } else if (tx.value != bv.value) {
+                    alert("验证错误");
+                } else if (tx.value == "") {
+                    alert("验证码不能为空");
+                }
+            }
+        }
+        zheng();
+
+
+
+
+
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

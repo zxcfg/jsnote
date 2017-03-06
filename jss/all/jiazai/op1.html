@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="parent">
+    <p id="sonObj">测试OffsetParent属性</p>
+</div>
+<button id="button">点击这里</button>
+<script src="../../../js.js"></script>
+<script>
+    var parent=getId("parent");
+    var sonObj=getId("sonObj");
+    var but=getId("button");
+    var pe=sonObj.offsetParent;
+    but.onclick=function () {
+        pe.style.background="red";
+        console.log(sonObj.offsetLeft);
+    }
+</script>
+</body>
+</html>

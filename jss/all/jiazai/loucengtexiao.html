@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        .warp1,.warp2,.warp3,.warp4,.warp5{height:1000px; color:#c00; margin:0 auto; width:1200px;}
+        .fix_meun {width:64px; height:100px; position:fixed; top:20px;  right:0;  display:none;}
+        .fix_meun a {display:block; width:64px; height:25px; float:left; background:#fff;}
+        .fix_meun a.active {background:#c00; color:#fff;}
+        .top {height:100px; width:1200px; margin:0 auto; }
+        .footer {height:100px; width:1200px; margin:0 auto;}
+        .block{display:block;}
+    </style>
+</head>
+<body>
+<div class="top" id="top">
+    头部
+</div>
+<div id="main">
+    <div class="warp1" id="warp0">
+        1111
+    </div>
+    <div class="warp2" id="warp1">
+        2222
+    </div>
+    <div class="warp3" id="warp2">
+        3333
+    </div>
+    <div class="warp4" id="warp3">
+        4444
+    </div>
+    <div class="warp5" id="warp4">
+        5555
+    </div>
+</div>
+<div class="footer">
+    底部
+</div>
+<div class="fix_meun" id="menu">
+    <a href="javascript:;" class="f1" id="f0">
+        第一层
+    </a>
+    <a href="javascript:;" class="f2" id="f1">
+        第二层
+    </a>
+    <a href="javascript:;" class="f3" id="f2">
+        第三层
+    </a>
+    <a href="javascript:;" class="f4" id="f3">
+        第四层
+    </a>
+    <a href="javascript:;" class="f5" id="f4">
+        第五层
+    </a>
+    <span id="backTop">返回顶部</span>
+</div>
+<script type="text/javascript">
+    var main=document.getElementById("main");
+    var dv=main.getElementsByTagName("div");
+    var menu=document.getElementById("menu");
+    var ali=menu.getElementsByTagName("a");
+    var backTop=document.getElementById("backTop");
+    window.onscroll=function(){
+        var sTop=document.documentElement.scrollTop||document.body.scrollTop;
+        if(sTop>=main.offsetTop){
+            menu.style.display="block";
+        }else{
+            menu.style.display="none";
+        }
+
+
+        var num=0;
+        for(var j=0;j<dv.length;j++){
+            if(sTop>=dv[j].offsetTop){
+                num=j;
+            }
+            ali[j].className="";
+        }
+        ali[num].className="active";
+
+
+        for(var i=0;i<ali.length;i++){
+            ali[i].onclick=function(){
+                for(var j=0;j<ali.length;j++){
+                    if(this==ali[j]){
+                        document.documentElement.scrollTop=dv[j].offsetTop;
+                        document.body.scrollTop=dv[j].offsetTop;
+                    }
+                }
+            }
+        }
+
+
+        backTop.onclick=function(){
+            function back(){
+                sTop-=100;
+                document.documentElement.scrollTop=sTop;
+                document.body.scrollTop=sTop;
+                if(sTop<=0){
+                    clearInterval(time);
+                }
+            }
+            time=setInterval(back,10);
+        }
+
+
+    }
+
+
+</script>
+</body>
+</html>

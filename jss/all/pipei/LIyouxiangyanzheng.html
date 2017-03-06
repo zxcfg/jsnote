@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="txt" id="txt" value="" />
+		<input type="button" name="" id="but" value="登录" />
+	</body>
+	<script type="text/javascript">
+//		 asdasdas@163.com
+//		 456780456@qq.com;
+//		 sadas_546@126.com;
+//		 hjghsfd@sina.com
+//		
+//		/\w+@\w+\.[a-z]/i
+		var yx1=/^\w+\@\w+\.[a-z]+$/i;
+		var yx2=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		var qq=/^[1-9]\d{4,10}$/;
+//		var sj=/^(13|14|15|18|17)\d{9}$/
+			//  15位 全是数字 18 位 全是数字；17位数字 X;
+		var sf=/^(^[1-9]\d{14}$)|(^[1-9]\d{17}$)|(^[1-9]\d{16}(\d|x))$/i;
+		but.onclick=function (){
+			if(sf.exec(txt.value)){
+				alert('你输入正确');
+			}else{
+				alert('你输入的格式错误');
+			}
+		};
+//		but.onclick=function (){
+//			if(yx2.test(txt.value)){
+//				alert('你输入正确');
+//			}else{
+//				alert('你输入的格式错误');
+//			}
+//		}
+	</script>
+</html>

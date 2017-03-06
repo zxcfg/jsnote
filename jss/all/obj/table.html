@@ -3,8 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../../../reset.css">
+    <style>
+        #tabTitle li{
+            float: left;
+            width: 60px;
+            line-height: 40px;
+            background: orange;
+            text-align: center;
+        }
+        #tabContent{
+            clear: both;
+        }
+        #tabContent span {
+            width: 180px;
+            height: 200px;
+            background-color: gray;
+            display: none;
+        }
+        #tabContent .show{
+            display: block;
+        }
+        #tabTitle .select {
+            background-color: purple;}
+    </style>
 </head>
 <body>
+<ul id="tabTitle">
+    <li class="select">标题1</li>
+    <li>标题2</li>
+    <li>标题3</li>
+</ul>
+<div id="tabContent">
+    <span class="show">内容1</span>
+    <span>内容2</span>
+    <span>内容3</span>
+</div>
+<script type="text/javascript">
+    function tab(parentId1,parentId2,tag1,tag2){
+        this.tabTitle=document.getElementById(parentId1);
+        this.tabContent=document.getElementById(parentId2);
+        this.lis=this.tabTitle.getElementsByTagName(tag1);
+        this.spans=this.tabContent.getElementsByTagName(tag2);
+        var that=this;
+        for(var i=0;i<this.lis.length;i++) {
+            this.lis[i].onclick=function() {
+                that.tab1(this);
+            }
+        }
+    }
+    tab.prototype.tab1=function(Target){
+        for(var j=0;j<this.lis.length;j++){
+            if(this.lis[j]==Target){
+                this.lis[j].className="select";
+                this.spans[j].className="show";
+            }else{
+                this.lis[j].className="";
+                this.spans[j].className="";
+            }
+        }
+
+    }
+    var tt=new tab("tabTitle","tabContent","li","span");
+
+
+
+
+
+
+
+</script>
+
+
+
+
 
 </body>
 </html>

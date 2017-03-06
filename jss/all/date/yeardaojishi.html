@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+      距离2020.1.1.&nbsp00:00:00结束&nbsp&nbsp还有
+    <span></span>年
+    <span></span>天
+    <span></span>
+    <span>:</span>
+    <span></span>
+    <span>:</span>
+    <span></span>
+    <span>:</span>
+    <span></span>
+</div>
+<script>
+    var span=document.getElementsByTagName("span");
+    var end=new Date("2020,1,1,00:00:00");
+    function ssd(){
+        var start=new Date();
+        var t=end.getTime()-start.getTime();
+        var day=parseInt(t/84600000);
+        var hour=parseInt(t%84600000/3600000);
+        var fen=parseInt(t%84600000%3600000/600000);
+        var miao=parseInt(t%84600000%3600000%600000/1000);
+        var hao=t%84600000%3600000%600000%1000;
+
+        function isRun(year){
+            if(year%4==0&&year%100!=0){
+                return true;
+            }else if(year%100==0&&year%400==0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        var curYear=new Date().getFullYear();
+        var years=0;
+        while(true){
+            var isRunYear=isRun(curYear);
+            var daysInYear=isRunYear?366:365;
+            if(day>daysInYear){
+                day-=daysInYear;
+                years++;
+                curYear++;
+            }else{
+                break;
+            }
+        }
+
+        span[0].innerHTML=years;
+        span[1].innerHTML=day;
+        span[2].innerHTML=hour;
+        span[4].innerHTML=fen;
+        span[6].innerHTML=miao;
+        span[8].innerHTML=hao;
+    }
+    setInterval(ssd,1);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 200px;
+            height: 500px;
+            float: left;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            background-color:rgb(255,3,245);
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
+
+<script type="text/javascript">
+    window.onload=init();
+    function init(){
+        var tds=document.getElementsByTagName("td");
+        for(var i=0;i<tds.length;i++) {
+            var x=0;
+            var y=4;
+            var z=79;
+            x = Math.floor(Math.random() * 256);
+            y = Math.floor(Math.random() * 256);
+            z = Math.floor(Math.random() * 256);
+            tds[i].style.color="rgb(x,y,z)";
+        }
+
+
+
+
+
+
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

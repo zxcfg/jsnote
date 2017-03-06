@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #main{
+            width:800px;
+            height:600px;
+            margin:20px auto;
+            border:1px solid black;
+            position:relative;
+        }
+        #drag{
+            width:100px;
+            height:100px;
+            background:red;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
 </head>
 <body>
+<div id="main">
+    <div id="drag"></div>
+</div>
 
+<script>
+    var mian = document.getElementById("mian");
+    var drag = document.getElementById("drag");
+    var speed1 = 1;
+    var speed2 = 2;
+
+    drag.onmousedown = function(ev){
+        var event = ev || window.event;
+        var tempx = event.clientX - drag.offsetLeft;
+        var tempy = event.clientY - drag.offsetTop;
+        preDefault(ev);
+
+        document.onmousemove = function(ev){
+            var event = ev || window.event;
+            var endx = event.clientX - tempx;
+            var endy = event.clientY - tempy;
+            preDefault(ev);
+
+            if(endx >= main.clientWidth - drag.offsetWidth){
+                endx = main.clientWidth - drag.offsetWidth;
+            }else if(endx <= 0){
+                endx = 0;
+            }
+
+            if(endy >= main.clientHeight - drag.offsetHeight){
+                endy = main.clientHeight - drag.offsetHeight;
+            }else if(endy <= 0){
+                endy = 0;
+            }
+
+            drag.style.left = endx + "px";
+            drag.style.top = endy + "px";
+        }
+    };
+
+    /*drag.onmousedown = function(ev){
+     var event = ev || window.event;
+     var tempx = event.clientX;
+     var tempy = event.clientY;
+     var offsetx = drag.offsetLeft;
+     var offsety = drag.offsetLeft;
+
+     document.onmousemove = function(ev){
+     var event = ev || window.event;
+     var endx = offsetx + (event.clientX - tempx);
+     var endy = offsety + (event.clientY - tempy);
+
+     if(endx >= main.clientWidth - drag.offsetWidth){
+     endx = main.clientWidth - drag.offsetWidth;
+     }else if(endx <= 0){
+     endx = 0;
+     }
+
+     if(endy >= main.clientHeight - drag.offsetHeight){
+     endy = main.clientHeight - drag.offsetHeight;
+     }else if(endy <= 0){
+     endy = 0;
+     }
+
+     drag.style.left = endx + "px";
+     drag.style.top = endy + "px";
+     }
+     };*/
+
+    document.onmouseup = function(){
+        document.onmousemove = null;
+    };
+
+
+    document.onkeydown = function(ev){
+        var event = ev || window.event;
+        var keycode = event.keyCode || event.which;
+        var lt = drag.offsetLeft;
+        var tp = drag.offsetTop;
+
+        function movex(){
+            lt += speed1;
+            if(lt <= 0){
+                lt = 0;
+            }else if(lt >= main.clientWidth - drag.offsetWidth){
+                lt =main.clientWidth - drag.offsetWidth;
+            }
+        }
+        function movey(){
+            tp += speed2;
+            if(tp <= 0){
+                tp = 0;
+            }else if(tp >= main.clientHeight - drag.offsetHeight){
+                tp = main.clientHeight - drag.offsetHeight;
+            }
+        }
+        if(keycode == 37){
+            speed1 = -1;
+            movex();
+        }
+        if(keycode == 39){
+            speed1 = 1;
+            movex();
+        }
+
+        if(keycode == 38){
+            speed2 = -2;
+            movey();
+        }
+        if(keycode == 40){
+            speed2 = 2;
+            movey();
+        }
+        drag.style.left = lt + "px";
+        drag.style.top = tp + "px";
+
+    };
+
+    function preDefault(ev){
+        var event = ev || window.event;
+        if(event && event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue = false;
+        }
+    }
+</script>
 </body>
 </html>

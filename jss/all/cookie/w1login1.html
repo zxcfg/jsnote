@@ -5,6 +5,69 @@
     <title>Title</title>
 </head>
 <body>
+<form>
+    账号:<input type="text" name="u" id="txt"/><br/>
+    密码:<input type="text" name="p" id="psw"/><br/>
+    记住密码:<input type="checkbox" id="jizhu"/><br/>
+    <input type="button" value="提交" id="sub"/>
+</form>
+<script>
+    var txt=document.getElementById("txt");
+    var psw=document.getElementById("psw");
+    var jizhu=document.getElementById("jizhu");
+    var sub=document.getElementById("sub");
+    if(getCookie("password")){
+        txt.value=getCookie("username");
+        psw.value=getCookie("password");
+        jizhu.checked=true;
+    }
+    sub.onclick=function(){
+        setCookie("username",txt.value,3);
+        if(jizhu.checked){
+            setCookie("password",psw.value,3);
+        }else{
+            setCookie("password",psw.value,0);
+        }
+        var dates=new Date();
+        var loginTime=dates.getFullYear()+"年"+(dates.getMinutes()+1)+"月"+dates.getDate()+'日'+dates.getHours()+"时"+dates.getMinutes()+'分'+dates.getSeconds()+'秒';
+        setCookie("time",loginTime,30);
+        if(getCookie("time2")==false){
+            setCookie("time2",loginTime,30);
+        }
+        if(txt.value!=""&&psw.value!=""){
+            alert("登录成功");
+            window.location.href="login2.html";
+        }else{
+            alert("账号或密码不能为空");
+        }
+
+    };
+    function setCookie(key,value,days){
+        document.cookie=key+"="+encodeURIComponent(value)+";max-age="+days*24*60*60;
+    }
+    function getCookie(key){
+        var arr=document.cookie.split("; ");
+        for(var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            if(arr2[0]==key){
+                return decodeURIComponent(arr2[1]);
+            }
+        }
+        return false;
+    }
+    function ClearCookie(){
+        var arr=document.cookie.split("; ");
+        for(var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            document.cookie=arr2[0]+"=;max-age=0";
+        }
+    }
+
+
+
+
+
+</script>
 
 </body>
 </html>

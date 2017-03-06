@@ -63,16 +63,31 @@
 
 
     var arr = [{name: 'js1'}, {name: 'js2'}, {name: 'js3'}, {name: 'js4'}];
-    var arr1=arr.reduce(function(pre,cur,index,arr){
-        if (index == 1){
-            return pre.name+","+cur.name;
-        }else if (index ==arr.length-1){
-            return pre+"&"+cur.name;
-        }else {
+    //pre.name+","+cur.name/js1,js2
+    //pre+","+cur.name/js1,js2,js3
+    //pre+"&"+cur.name/js1,js2,js3&js4
+//    var arr1=arr.reduce(function(pre,cur,index,arr){
+//        if (index == 1){
+//            return pre.name+","+cur.name;
+//        }else if (index ==arr.length-1){
+//            return pre+"&"+cur.name;
+//        }else {
+//            return pre+","+cur.name;
+//        }
+    var arr1=arr.reduceRight(function(pre,cur,index,arr){
+        //pre.name+"&"+cur.name/js3&js4
+        //pre+","+cur.name/js1,js2,js3
+        if(index==arr.length-2){
+            return cur.name+"&"+pre.name;
+        }else{
             return pre+","+cur.name;
         }
+
     });
     console.log(arr1);
+
+
+
 
 
 

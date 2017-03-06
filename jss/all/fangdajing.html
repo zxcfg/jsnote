@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #main{
+            margin:30px 0 0 30px;
+            overflow: hidden;
+        }
+        #left{
+            width: 600px;
+            height: 338px;
+            float: left;
+            border:1px solid red;
+            position: relative;
+        }
+        #leftImg{
+            width: 600px;
+            height: 338px;
+            display: block;
+        }
+        #drag{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 150px;
+            height: 85px;
+            background-color: yellowgreen;
+            opacity: 0.4;
+            display: none;
+            cursor: move;
+        }
+        #right{
+            width: 600px;
+            height: 338px;
+            overflow: scroll;
+            float: left;
+            margin-left: 20px;
+            display: none;
+        }
+        #viewImg{
+            margin:20px 0 0 30px;
+        }
+        #viewImg img{
+            width: 200px;
+        }
+
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            var main=document.getElementById("main");
+            var left=document.getElementById("left");
+            var leftImg=document.getElementById("leftImg");
+            var right=document.getElementById("right");
+            var rightImg=document.getElementById("rightImg");
+            var drag=document.getElementById("drag");
+            var viewImg=document.getElementById("viewImg");
+            var imgs=viewImg.getElementsByTagName("img");
+            left.onmousemove=function(e){
+                var ev=e||window.event;
+                drag.style.display="block";
+                right.style.display="block";
+                var startX=ev.clientX-main.offsetLeft-drag.offsetWidth/2;
+                var startY=ev.clientY-main.offsetTop-drag.offsetHeight/2;
+                var moveX=left.clientWidth-drag.offsetWidth;
+                var moveY=left.clientHeight-drag.offsetHeight;
+                if(startX<0){
+                    startX=0;
+                }else if(startX>moveX){
+                    startX=moveX;
+                }
+                if(startY<0){
+                    startY=0;
+                }else if(startY>moveY){
+                    startY=moveY;
+                }
+                drag.style.left=startX+"px";
+                drag.style.top=startY+"px";
+                var num=rightImg.offsetWidth/leftImg.offsetWidth;
+                right.scrollLeft=drag.offsetLeft*num;
+                right.scrollTop=drag.offsetTop*num;
+
+            };
+            left.onmouseout=function (){
+                drag.style.display="none";
+                right.style.display="none";
+            };
+            for(var i=0;i<imgs.length;i++){
+                imgs[i].onclick=function(){
+                    for(var j=0;j<imgs.length;j++){
+                        if(this==imgs[j]){
+                            leftImg.src="imgs/image"+j+".jpg";
+                            rightImg.src="imgs/image"+j+".jpg";
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="left">
+        <img src="imgs/image0.jpg" id="leftImg"/>
+        <div id="drag"></div>
+    </div>
+    <div id="right">
+        <img src="imgs/image0.jpg" id="rightImg"/>
+    </div>
+</div>
+<div id="viewImg">
+    <img src="imgs/image0.jpg" alt="">
+    <img src="imgs/image1.jpg" alt=""/>
+</div>
+
+</body>
+</html>

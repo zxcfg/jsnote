@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #inp{
+            width: 200px;
+            height: 30px;   
+            font-size: 16px;
+            color: gray;
+            border: 1px solid black;
+        }
+        #but{
+            width: 80px;
+            height: 34px;
+            font-size: 20px;
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<input type="text" value="请输入图片的ID号" id="inp"/>
+<button type="button" id="but">计算</button>
+
+
+<script type="text/javascript">
+    window.onload=init();
+    function init(){
+        var inp=document.getElementById("inp");
+        var but=document.getElementById("but");
+        but.onclick=function (){
+            alert("该图片在第"+Math.floor(inp.value/100)+"个文件夹中");
+
+        }
+
+
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

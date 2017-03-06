@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            font-size: 20px;
+        }
+        ul li{
+            list-style: none;
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div>随机新闻</div>
+<ul>
+    <li>新闻<a></a></li>
+    <li>新闻<a></a></li>
+    <li>新闻<a></a></li>
+    <li>新闻<a></a></li>
+    <li>新闻<a></a></li>
+</ul>
+
+
+
+<script type="text/javascript">
+    window.onload=init();
+    function init(){
+        var a=document.getElementsByTagName("a");
+        var num=0;
+        for(var i=0;i<a.length;i++){
+            num=Math.floor(Math.random()*50);
+            a[i].innerHTML=num;
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

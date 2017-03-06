@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        #ds{
+            height: 300px;
+            width:auto;
+            background-color: yellow;
+            display: block;
+            overflow: hidden;
+        }
+        #sss{
+            width: 20px;
+            height: 20px;
+            background: red;
+            margin-top: 140px;
+        }
+    </style>
+</head>
+<body>
+<div id="ds">
+    <div id="sss">
+
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var sss=document.getElementById("sss");
+    var i=0;
+    function sport() {
+        i++;
+        //var x=Math.sin(i*Math.PI/180)*100;
+        var y=140+Math.sin(i*Math.PI/180)*100;
+        sss.style.marginLeft=i+"px";
+        sss.style.marginTop=y+"px";
+    }
+    setInterval(sport,10);
+</script>
+</html>

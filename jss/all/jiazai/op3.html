@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #grandFather {
+            position: absolute; <!-- position：relative; -->
+            left: 25px;
+            top: 188px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="grandFather">
+    <div id="parent">
+        <p id="sonObj">测试OffsetParent属性</p>
+    </div>
+</div>
+<button id="button">点击这里</button>
+<script src="../../../js.js"></script>
+<script>
+    var parent=getId("parent");
+    var sonObj=getId("sonObj");
+    var but=getId("button");
+    var pe=sonObj.offsetParent;
+    but.onclick=function () {
+        pe.style.background="red";
+        console.log(sonObj.offsetLeft);
+    }
+</script>
+</body>
+</html>

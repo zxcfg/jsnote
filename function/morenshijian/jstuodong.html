@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+            width: 800px;
+            height: 500px;
+            margin:0 auto;
+            border:1px solid red;
+            position: relative;
+        }
+        #drag{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="drag">
+    </div>
+</div>
+<script>
+    var main=document.getElementById("main");
+    var drag=document.getElementById("drag");
+    drag.onmousedown=function(event){
+        var ev=event||window.event;
+//        console.log("x:"+ev.clientX);
+//        console.log("y:"+ev.clientY);
+        var tempX=ev.clientX-drag.offsetLeft;
+        var tempY=ev.clientY-drag.offsetTop;
+        drag.onmousemove=function(event){
+            var ev=event||window.event;
+            var endX=ev.clientX-tempX;
+            var endY=ev.clientY-tempY;
+            var mouseX=main.clientWidth-drag.offsetWidth;
+            var mouseY=main.clientHeight-drag.offsetHeight;
+            if(endX>=mouseX){
+                endX=mouseX;
+            }else if(endX<=0){
+                endX=0;
+            }else if(endY>=mouseY){
+                endY=mouseY;
+            }else if(endY<=0){
+                endY=0;
+            }
+            drag.style.left=endX+"px";
+            drag.style.top=endY+"px";
+        }
+    };
+    document.onmouseup=function (){
+        document.onmousemove=null;
+    }
+
+
+</script>
+
+</body>
+</html>

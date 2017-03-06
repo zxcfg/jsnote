@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		#ds,#dd{height:100px;}
+	</style>
+	<body>
+		<textarea id="ds" name="" rows="40" cols="40"></textarea>
+		<input type="button" name="gl" id="gl" value="过滤" />
+		<textarea id="dd" name="" rows="40" cols="40"></textarea>
+	</body>
+	<script>
+		var ds=document.getElementById("ds");
+		var hg=/天猫|双十一|淘宝|1/g;
+
+		ds.onkeyup=function () {
+			ds.value = ds.value.replace(hg, '**');
+		}
+	</script>
+</html>

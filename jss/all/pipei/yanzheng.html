@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanzheng</title>
+</head>
+<body>
+<div>
+    <span>手机号</span>
+    <input type="text" id="sjh"><br>
+    <span>邮&nbsp&nbsp&nbsp&nbsp箱</span>
+    <input type="text" id="yx"><br>
+    <span>身份证</span>
+    <input type="text" id="sfz">
+    <input type="button" value="提交" id="tj">
+
+</div>
+<script>
+    var sjh=document.getElementById("sjh");
+    var yx=document.getElementById("yx");
+    var sfz=document.getElementById("sfz");
+    var tj=document.getElementById("tj");
+    var shou=/^(13[0-9]|14[57]|15[012356789]|18[0236789])[0-9]{8}$/;
+    var you=/^([a-zA-Z0-9\-\_\.]+)@(([a-zA-Z0-9\-])+\.)+([a-zA-z0-9]{2,4})+$/;
+    var shen=/(^[1-9]\d{14}$)|(^[1-9]\d{17}$)|(^[1-9]\d{16}(\d|x)$)/i;
+    tj.onclick=function(){
+        ji();
+        xiang();
+        fen();
+    };
+    function ji(){
+        if(!shou.exec(sjh.value)){
+            alert("你输入的手机号格式错误");
+            sjh.style.border="1px solid red";
+        }else{
+            sjh.style.border="1px solid gainsboro";
+
+        }
+    };
+    function xiang(){
+        if(!you.exec(yx.value)){
+            alert("你输入的邮箱格式错误");
+            yx.style.border="1px solid red";
+        }else{
+            yx.style.border="1px solid gainsboro";
+
+        }
+    };
+    function fen(){
+        if(!shen.exec(sfz.value)){
+            alert("你输入的身份证格式错误");
+            sfz.style.border="1px solid red";
+        }else{
+            sfz.style.border="1px solid gainsboro";
+
+        }
+    };
+
+
+
+
+
+</script>
+
+</body>
+</html>

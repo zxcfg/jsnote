@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		距离团购结束还有<span></span>年<span></span>天<span></span>小时<span></span>分钟<span></span>秒<span></span>毫秒
+	</body>
+	<script type="text/javascript">
+		//1秒=1000毫秒；
+		//1分钟=60*1000;60000秒
+		//1小时=60*60*1000  3600000秒
+		//1天=60*60*1000*24; 84600000秒
+
+		var end=new Date("2019,2,16,00:00:00"); //固定不变的
+		var span=document.getElementsByTagName('span');
+		function ssd(){
+			var star= new Date();
+			// 时间差
+			var t=end.getTime()-star.getTime();  //总的毫秒数
+			// -- 84600000->24*60*60*1000
+			var tian=parseInt(t/84600000);
+				//或得到的天数；
+	//		var xss=;
+			//	去除天数剩下的剩下的毫秒；
+			// -- 不到一天的毫秒值
+			var xs=parseInt(t%84600000/3600000);
+			//获取到的小时
+	//		var fez=t%3600000;
+			//去小时剩下的毫秒数
+			var fezh=parseInt(t%84600000%3600000/60000);
+			//获取到的分钟数
+	//		var mis=fez%60000;
+			//去除天数小时 分钟数剩下的毫秒数
+			var ms=parseInt(t%84600000%3600000%60000/1000);
+			var hm=t%84600000%3600000%60000%1000;
+
+			//是否是闰年
+			function isRun(year){
+				//能被4整除，不能被100整除的是闰年
+				if(year%4 == 0 && year%100!=0){
+					return true;
+				}else if(year%100 ==0 && year%400==0){
+					//能被100整除同时也能被400整除的也是闰年
+					return true;
+				}else{
+					//其他的都是平年
+					return false;
+				}
+			}
+
+			var curYear = new Date().getFullYear();
+			var years = 0;
+			while(true){
+				var isRunYear = isRun(curYear);
+				//闰年366天，平年365天
+				var daysInYear = isRunYear ? 366 : 365;
+
+				if(tian > daysInYear){//总天数大于1年时
+					tian -= daysInYear;
+					years++;
+					curYear++;
+				}else{
+					break;
+					//退出循环
+				}
+			}
+
+			span[0].innerHTML=years;
+			span[1].innerHTML=tian;
+			span[2].innerHTML=xs;
+			span[3].innerHTML=fezh;
+			span[4].innerHTML=ms;
+			span[5].innerHTML=hm;
+		}
+		setInterval(ssd,1);
+	</script>
+</html>

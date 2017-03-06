@@ -27,6 +27,8 @@
 		psw.value=getCookie("password");
 		jizhu.checked=true;
 	}
+
+
 	sub.onclick=function () {
 		setCookie("username",txt.value,3);
 		if(jizhu.checked){
@@ -47,6 +49,8 @@
 			alert('账号或密码不能为空');
 		}
 	};
+
+
 	function setCookie(key,value,days) {
 		document.cookie=key+"="+encodeURIComponent(value)+";max-age="+days*24*60*60;
 	}
