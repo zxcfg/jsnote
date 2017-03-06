@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt"/><br>
+<input type="text" id="psw"/><br>
+<input type="button" value="提交" id="sub"/>
+<input type="button" id="cok" value="Cookie"/>
+<input type="button" id="remove" value="remove"/>
+<script>
+    var txt=document.getElementById("txt");
+    var psw=document.getElementById("psw");
+    var sub=document.getElementById("sub");
+    var cok=document.getElementById("cok");
+    var remove=document.getElementById("remove");
+    function setCookie(keys,values,days) {
+        document.cookie=keys+"="+values+";max-age="+days*24*60*60;
+    }
+    sub.onclick=function () {
+        setCookie("username",txt.value,3);
+        setCookie("password",psw.value,3);
+    };
+    function getCookie(keys) {
+        var arr=document.cookie.split("; ");
+        //console.log(arr);
+        for(var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            console.log(arr2);
+            if(arr2[0]==keys){
+               return arr2[1];
+            }
+        }
+        return false;
+    }
+    function clearAllCookie() {
+        
+    }
+    cok.onclick=function () {
+        console.log(getCookie("username"));
+        console.log(getCookie("password"));
+    };
+    remove.onclick=function () {
+        setCookie("username",0,0);
+        setCookie("password",0,0);
+    };
+    window.onload=function(){
+        if(document.cookie!=""){
+            txt.value=getCookie("username");
+            psw.value=getCookie("password");
+        }
+    };
+    txt.onblur=function () {
+        if(txt.value==getCookie("username")){
+            psw.value=getCookie("password");
+        }
+    }
+</script>
+</body>
+</html>

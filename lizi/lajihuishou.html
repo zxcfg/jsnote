@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var test = 'hello world';
+    function outer() {
+        return function() {
+            return console.log(test);
+        };
+    }
+    window.bar = outer();
+</script>
+</body>
+</html>

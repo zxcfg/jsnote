@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt"/><br>
+<input type="text" id="psw"/><br>
+<input type="button" value="提交" id="sub"/>
+<input type="button" id="cok" value="Cookie"/>
+<input type="button" id="remove" value="remove"/>
+<script>
+    var txt=document.getElementById("txt");
+    var psw=document.getElementById("psw");
+    var sub=document.getElementById("sub");
+    var cok=document.getElementById("cok");
+    var remove=document.getElementById("remove");
+    function setCookie(key,value,days) {
+        document.cookie=key+"="+encodeURIComponent(value)+";max-age="+days*24*60*60;
+    }
+    function getCookie(key) {
+        var arr=document.cookie.split("; ");
+        for (var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            if(arr2[0]==key){
+                return decodeURIComponent(arr2[1]);
+            }
+        }
+        return false;
+    }
+    function ClearCookie() {
+        var arr=document.cookie.split("; ");
+        for(var i=0;i<arr.length;i++) {
+            var arr2=arr[i].split("=");
+            document.cookie = arr2[0] + "=;max-age=0";
+        }
+    }
+    sub.onclick=function () {
+        setCookie("username",txt.value,3);
+        setCookie("password",psw.value,3);
+    };
+    cok.onclick=function () {
+        console.log(getCookie("username"));
+        console.log(getCookie("password"));
+    };
+    remove.onclick=function () {
+//        setCookie("username",0,0);
+//        setCookie("password",0,0);
+        ClearCookie();
+    };
+    window.onload=function(){
+        if(document.cookie!=""){
+            txt.value=getCookie("username");
+            psw.value=getCookie("password");
+        }
+    };
+    txt.onblur=function () {
+        if(txt.value==getCookie("username")){
+            psw.value=getCookie("password");
+        }
+    }
+</script>
+</body>
+</html>

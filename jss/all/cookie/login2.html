@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	
+</style>
+</head>
+<body>
+	<h1 id="txt"></h1>
+	<a href="javascript:;" id="quit">退出</a>
+</body>
+<script>
+	function setCookie(key,value,days) {
+		document.cookie=key+"="+encodeURIComponent(value)+";max-age="+days*24*60*60;
+	}
+	function getCookie(key) {
+		var arr=document.cookie.split("; ");
+		for (var i=0;i<arr.length;i++){
+			var arr2=arr[i].split("=");
+			if(arr2[0]==key){
+				return decodeURIComponent(arr2[1]);
+			}
+		}
+		return false;
+	}
+	txt.innerHTML='你好'+getCookie('username')+'，'+'上次登录时间:'+getCookie('time2');
+	setCookie('time2',getCookie('time'),30);//设置下次登录时间
+	quit.onclick=function () {
+		window.location.href="login1.html";
+		setCookie("password",0,0);
+	}
+</script>
+</html>

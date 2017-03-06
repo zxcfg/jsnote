@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .pic{width:255px;height:400px;margin:50px auto;border:1px solid red;overflow:hidden;}
+        .imgs{width:2040px;height:400px;}
+        .imgs img{width:255px;height:400px;float:left;}
+        .but{width:600px;height:50px;margin:10px auto;border:1px solid red;text-align:center;}
+        .but span{font-size:40px;padding-right:15px;cursor:pointer;}
+        .select{color:red;}
+        .direct{position:relative;width:255px;margin:0 auto;}
+        .direct,.direct li{list-style: none;font-size:40px;}
+        .direct li:first-child{position:absolute;left:0;top:0;}
+        .direct li:last-child{position:absolute;right:0;top:0;}
+    </style>
+</head>
+<body>
+<div id="picArea1">
+    <div id="pic1" class="pic">
+        <div class='imgs'>
+            <img src="images/1.jpg">
+            <img src="images/2.jpg">
+            <img src="images/3.jpg">
+            <img src="images/4.jpg">
+        </div>
+    </div>
+    <ul class="direct">
+        <li>←</li>
+        <li>→</li>
+    </ul>
+    <div class='but'>
+        <span class='select'>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</div>
+<div id="picArea2">
+    <div id="pic2" class="pic">
+        <div class='imgs'>
+            <img src="images/1.jpg">
+            <img src="images/2.jpg">
+            <img src="images/3.jpg">
+            <img src="images/4.jpg">
+        </div>
+    </div>
+    <ul class="direct">
+        <li>←</li>
+        <li>→</li>
+    </ul>
+    <div class='but'>
+        <span class='select'>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</div>
+<script>
+        function scrollPic(picAreaId,picId){
+            this.picArea=document.getElementById(picAreaId);
+            this.pic=document.getElementById(picId);
+            this.imgs=this.picArea.getElementsByTagName("img");
+            this.spans=this.picArea.getElementsByTagName("span");
+            this.lis = this.picArea.getElementsByTagName("li");
+            this.time=null;
+            this.time2=null;
+            this.imgWidth=this.imgs[0].offsetWidth;
+            this.autoNum=0;
+            var _this=this;
+            this.clock();
+            //this.moveTo(0,765);
+            for(var i=0;i<this.spans.length;i++){
+                this.spans[i].onmouseover=function(){
+                    _this.fnMouseover(this);
+                }
+            }
+            this.lis[0].onclick = function(){_this.leftBtn()};
+            this.lis[1].onclick = function(){_this.rightBtn()};
+        }
+        scrollPic.prototype={
+            moveTo:function(startPos,endPos){
+                var _this=this;
+                if(this.time){
+                    clearInterval(this.time);
+                }
+                this.startPos=startPos;
+                this.endPos=endPos;
+                this.step=0;
+                this.stepMax=15;
+                this.everyStep=(this.endPos-this.startPos)/this.stepMax;
+                this.time=setInterval(function(){
+                    _this.move();
+                },25)
+            },
+            move:function(){
+                    this.pic.scrollLeft+=this.everyStep;
+                    this.step++;
+                    if(this.step==this.stepMax){
+                        this.pic.scrollLeft=this.endPos;
+                        clearInterval(this.time);
+                    }
+            },
+            autoMove:function(){
+                this.autoNum++;
+                if(this.autoNum==this.imgs.length){
+                    this.autoNum=0;
+                }
+                if(this.autoNum==-1){
+                    this.autoNum=this.imgs.length-1;
+                }
+                this.btnColor();
+                this.moveTo(this.pic.scrollLeft,this.imgWidth*this.autoNum);
+            },
+            clock:function(){
+                var _this=this;
+                this.time2=setInterval(function(){
+                    _this.autoMove();
+                },3000);
+            },
+            clearClock:function(){
+                if(this.time2){
+                    clearInterval(this.time2);
+                }
+            },
+            btnColor:function(){
+                for(var i=0;i<this.spans.length;i++){
+                    this.spans[i].className="";
+                }
+                this.spans[this.autoNum].className="select";
+            },
+            fnMouseover:function(tag){
+                this.clearClock();
+                for(var j=0;j<this.spans.length;j++){
+                    if(tag==this.spans[j]){
+                        this.autoNum=j;
+                        this.moveTo(this.pic.scrollLeft,this.imgWidth*j);
+                        this.btnColor();
+                    }
+                }
+                this.clock();
+            },
+            leftBtn:function(){
+                this.clearClock();
+                this.autoNum-=2;
+                this.autoMove();
+                this.clock();
+            },
+            rightBtn:function(){
+                this.clearClock();
+                this.autoMove();
+                this.clock();
+            }
+        }
+        var pic1=new scrollPic("picArea1","pic1")
+        var pic2=new scrollPic("picArea2","pic2")
+</script>
+</body>
+</html>

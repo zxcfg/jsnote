@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="uname" value="" />
+		<input type="text" name="" id="passw" value="" />
+		<input type="button" name="" id="but" value="获取数据" />
+		<div id="ds" style="font-size: 35px;"></div>
+	</body>
+	<script type="text/javascript">
+		but.onclick=function (){
+			//买一个手机
+			var xhr=new XMLHttpRequest();
+			// 我开始按号码;//var url = "login.jsp?user=XXX&pwd=XXX";
+			xhr.open('post','form.php?hg'+Math.random(),true);//？是后面的是参数,传到后台的参数,后台不理会这个参数的话，随便传也没关系，后台不取这个参数的话，你传了这个参数也没用，问号前面的才是页面地址
+			//我开始呼叫//"user="+username+"&pwd="+password
+			xhr.setRequestHeader('Content-Type',"application/x-www-form-urlencoded");
+			xhr.send("username="+uname.value+"&&password="+passw.value);
+			//对方响应状态
+			xhr.onreadystatechange=function (){
+				if(xhr.readyState==4){  //验证发送给服务器服务
+					if(xhr.status==200){  //验证服务器响应状态
+						//回话;
+						var txt=xhr.responseText;
+						console.log(txt);
+						if(txt=='pass'){
+							ds.innerHTML="正确";
+							//window.location.href="https://www.baidu.com";
+
+						}else{
+							//var h="http://www.baidu.com";
+							ds.innerHTML="错误";
+							//window.location.href="http://www.baidu.com";
+						}
+					}else{
+						alert('请求状态为'+xhr.status)
+					}
+
+				}
+
+			}
+		}
+	</script>
+</html>

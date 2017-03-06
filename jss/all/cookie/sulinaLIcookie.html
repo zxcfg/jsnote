@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie练习</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            margin:50px 50px 0;
+        }
+        input{
+            width:300px;
+            height:30px;
+            line-height:30px;
+            margin:10px 0 0;
+        }
+        button{
+            line-height:30px;
+            font-size:20px;
+            padding:0 10px;
+            margin:10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input id="txt1" type="text">
+        <br />
+        <input id="txt2" type="text">
+        <br />
+        <button>提交</button>
+        <button>cookie</button>
+        <button>remove</button>
+    </div>
+
+    <script>
+        var txt1 = document.getElementById("txt1");
+        var txt2 = document.getElementById("txt2");
+        var btns = document.getElementsByTagName("button");
+        var obj = {};
+
+        /**将cookie信息存到一个对象obj中*/
+        function obtainObj(){
+            var cookies = decodeURIComponent(document.cookie);
+            for(var i = 0; i < cookies.split("; ").length; i++){
+                obj[cookies.split("; ")[i].split("=")[0]] = cookies.split("; ")[i].split("=")[1];
+            }
+        }
+        obtainObj();
+        if(obj.username){
+            txt1.value = obj.username;
+            txt2.value = obj.password;
+            txt1.onblur = function(){
+                if(txt1.value == obj.username){
+                    txt2.value = obj.password;
+                }
+            }
+        }
+        btns[0].onclick = function(){
+            if(txt1.value != "" && txt2.value != ""){
+                document.cookie = "username=" + encodeURIComponent(txt1.value) + ";max-age=" + 3*24*60*60;
+                document.cookie = "password=" + encodeURIComponent(txt2.value) + ";max-age=" + 3*24*60*60;
+                obtainObj();
+            }else{
+                alert("请输入完整");
+            }
+        };
+        /**输出cookie信息*/
+        btns[1].onclick = function(){
+            console.log(decodeURIComponent(document.cookie));
+        };
+        /**清除cookie信息*/
+        btns[2].onclick = function(){
+            document.cookie = "username=" + encodeURIComponent(txt1.value) + ";max-age=0";
+            document.cookie = "password=" + encodeURIComponent(txt2.value) + ";max-age=0";
+            txt1.value = "";
+            txt2.value = "";
+            obj = {};
+        }
+    </script>
+</body>
+</html>

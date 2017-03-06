@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="reset.css">
+<style>
+	#box,#box2{
+		width: 450px;
+		overflow: hidden;
+		margin:50px auto 0;
+	}
+	#head,#head2{
+		/*height: 40px;*/
+		overflow: hidden;
+	}
+	#head span,#head2 span{
+		float: left;
+		width: 148px;
+		height: 38px;
+		line-height:38px;
+		border: 1px solid #000;
+		text-align: center;
+		font-size: 24px;
+		cursor: pointer;
+	}
+	#head span:hover{
+		color: red;
+	}
+	#head2 span:hover{
+		color: red;
+	}
+	#content,#content2{
+		width: 448px;
+		height: 200px;
+		border: 1px solid #000;
+	}
+	#content li,#content2 li{
+		width: 448px;
+		height: 200px;
+		font-size: 60px;
+		text-align: center;
+		line-height: 200px;
+		display: none;
+	}
+
+	/*当前显示的样式*/
+	#head .select,#head2 .select{
+		background: green;
+	}
+	#content .show,#content2 .show{
+		display: block;
+	}
+</style>
+</head>
+<body>
+	<div id="box">
+		<h1 id="head">
+			<span class="select">标题1</span>
+			<span>标题2</span>
+			<span>标题3</span>
+			<span>标题4</span>
+			<span>标题5</span>
+		</h1>
+		<ul id="content">
+			<li class="show">内容111</li>
+			<li>内容222</li>
+			<li>内容333</li>
+			<li>内容444</li>
+			<li>内容555</li>
+		</ul>
+	</div>
+	<div id="box2">
+		<h1 id="head2">
+			<span class="select">标题1</span>
+			<span>标题2</span>
+			<span>标题3</span>
+			<span>标题4</span>
+			<span>标题5</span>
+		</h1>
+		<ul id="content2">
+			<li class="show">内容111</li>
+			<li>内容222</li>
+			<li>内容333</li>
+			<li>内容444</li>
+			<li>内容555</li>
+		</ul>
+	</div>
+</body>
+<script>
+	//面向过程
+	/*var head=document.getElementById('head');
+	var spans=head.getElementsByTagName('span');
+	var content=document.getElementById('content');
+	var lis=content.getElementsByTagName('li');
+
+	//第一个for循环 给每一个标题绑定一个点击事件
+	for (var i = 0; i < spans.length; i++) {
+		spans[i].onclick=function (){
+			//通过遍历 判断找出当前点击的标题
+			for (var v = 0; v < spans.length; v++) {
+				if (spans[v]==this) {//this指向当前点击的标题
+					spans[v].className='select';
+					lis[v].className='show';
+				} else{
+					spans[v].className='';
+					lis[v].className='';
+				};
+			};
+		}
+	};*/
+
+	//面向对象
+	// 1.创建构造函数
+	function CreateTab(parentId,Tag1,Tag2){
+		// 2.把变量变成对象的属性
+		this.box=document.getElementById(parentId);
+		this.spans=this.box.getElementsByTagName(Tag1);
+		this.lis=this.box.getElementsByTagName(Tag2);
+		
+		var _this=this;//此时this指向CreateTab对象
+		for (var i = 0; i < this.spans.length; i++) {
+			this.spans[i].onclick=function (){
+				_this.Tab(this);//此时this指向某个span
+			}
+		};
+	}
+	// 3.把函数变成对象的方法(prototype)
+	CreateTab.prototype.Tab=function (Target){
+		for (var v = 0; v < this.spans.length; v++) {
+			if (this.spans[v]==Target) {//this指向当前点击的标题
+				this.spans[v].className='select';
+				this.lis[v].className='show';
+			} else{
+				this.spans[v].className='';
+				this.lis[v].className='';
+			};
+		};
+	}
+	// 4.找错、对象实例化
+	var tab1=new CreateTab('box','span','li');//实例化一个tab对象
+	var tab2=new CreateTab('box2','span','li');//实例化一个tab对象
+</script>
+</html>
