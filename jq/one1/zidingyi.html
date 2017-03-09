@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hzi{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="../../jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script>
+//        $(function(){
+//            $(".btn").on("click",function(){
+//                $(".hzi").animate({
+//                    width:"200px",
+//                    height:"200px",
+//
+//                },"fast","swing",function(){
+//                    $(".hzi").css("background","blue");
+//                })
+//            })
+//        })
+
+
+
+        $(function(){
+            $(".btn").on("click",function(){
+                $(".hzi").animate({
+                    width:"200px",
+                    height:"200px"
+                },{
+                    queue:true,
+                    duration:1000,
+                    easing:"swing",
+                    complete:function(){
+                        console.log(1);
+                    }
+                })
+            })
+        })
+
+
+    </script>
+
+</head>
+<body>
+<button class="btn">gaibian</button>
+<div class="hzi">zidingyi</div>
+
+</body>
+</html>

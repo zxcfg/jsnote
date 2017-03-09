@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style type="text/css">
+        .box{
+            width:400px;
+            margin:20px auto 0;
+        }
+        .pic{
+            width:100%;
+            overflow:hidden;
+        }
+        .imgs{
+            width:1600px;
+        }
+        .imgs img{
+            float:left;
+            width:400px;
+        }
+        #direct{
+            margin:10px auto;
+            text-align:center;
+        }
+        #direct li{
+            font-size:30px;
+            display:inline-block;
+            margin:0 5px;
+            cursor:pointer;
+        }
+        #direct li:hover{
+            color:red;
+        }
+        .but{
+            text-align:center;
+        }
+        .but span{
+            display:inline-block;
+            padding:0 10px;
+            font-size:24px;
+            color:black;
+            cursor:pointer;
+            margin:0 5px;
+        }
+        .but .cur{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div id="pic" class="pic">
+        <div class='imgs clear'>
+            <img src="img/1.jpg">
+            <img src="img/2.jpg">
+            <img src="img/3.jpg">
+            <img src="img/4.jpg">
+        </div>
+    </div>
+    <ul id="direct">
+        <li>←</li>
+        <li>→</li>
+    </ul>
+    <div id='but' class='but'>
+        <span class='cur'>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</div>
+<script src="../../../jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+
+        var time1 = null;
+        var num = 0;
+
+        function clearTime(){
+            if(time1){
+                clearInterval(time1);
+            }
+        }
+        function slides(){
+            $(".but span").removeClass("cur");
+            $(".but span").eq(num).addClass("cur");
+            $(".imgs").animate({"margin-left" : (- $(".imgs img").width()*num + "px")}, "slow", "swing");
+        }
+        function move(){
+            num++;
+            if(num >= $(".imgs img").length){
+                num = 0;
+            }else if(num < 0){
+                num = $(".imgs img").length - 1;
+            }
+            slides();
+        }
+        function autoMove(){
+            clearInterval(time1);
+            time1 = setInterval(move, 2000);
+        }
+
+        autoMove();
+
+        $(".but span").on("click", function(){
+            clearTime();
+            num = $(this).index();
+            slides();
+            autoMove();
+        });
+
+        $("#direct li").eq(0).on("click", function(){
+            clearTime();
+            num -= 2;
+            move();
+            autoMove();
+        });
+        $("#direct li").eq(1).on("click", function(){
+            clearTime();
+            move();
+            autoMove();
+        });
+
+    });
+
+</script>
+</body>
+</html>
