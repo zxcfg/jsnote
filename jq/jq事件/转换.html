@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	.con{width: 400px; height: 200px; background: #ccc;}
+</style>
+</head>
+<body>
+	<button class="btn">改变</button>
+	<div class="con" id="con"></div>
+	<div class="con"></div>
+</body>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script>
+	var con=document.getElementById('con');
+	$('.btn').on("click",function (){
+		//var con=document.getElementById("con");
+//		$("#con").get(0).style.backgroundColor="red";
+//		$(".con").get(1).style.background="red";
+//		$('con').css('background','red');//jq语法
+//		 con.style.background='green';//js语法
+//		$('#con').style.background='green';//报错
+//		 $(con).css('background','red');
+//		 $('.con').get(0).style.background='green';
+//		$('.con').get(0).style.background='yellow';
+		// $(this)//jq对象
+		// this//js对象
+		//$(this).get(0).style.background='green';
+	})
+</script>
+</html>

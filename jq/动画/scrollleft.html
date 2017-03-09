@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	body{height: 2000px;}
+	.box{width: 400px; height: 400px; overflow: hidden; overflow-x: scroll; border: 1px solid #000;}
+	.box p{font-size: 20px; width: 800px;}
+	.top{background: #ccc; position: fixed; right: 0; bottom: 40px;}
+</style>
+</head>
+<body>
+	<div class="box">
+		<p>看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工看见个空间高科技高科技化工</p>
+	</div>
+	<button class="btn">按钮</button>
+	<button class="top">返回顶部</button>
+</body>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script>
+	$('.btn').click(function (){
+		$('.box').animate({
+			scrollLeft:'300'
+		});
+	})
+	// alert($('body').scrollTop())
+	$('.top').click(function (){
+		$('body').animate({
+			scrollTop:'0'
+		});
+	})
+</script>
+</html>

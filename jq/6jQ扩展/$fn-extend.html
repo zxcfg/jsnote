@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	
+</style>
+</head>
+<body>
+	<div>我是div标签</div>
+</body>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script>
+	$.fn.extend({//给jq对象添加方法
+		fly:function (){
+			console.log('飞啊飞');
+		}
+	});
+//	 $.fly();//无效
+//	 jQuery.fly();//无效
+	$('div').fly();
+	//jQuery('div').fly();
+
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>fadeIn & fadeOut</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="test" title='标题' style='border:1px solid red;'>
+		 温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习温习
+	</div>
+	<input type='button' value='fadeIn()' id='fadeIn'/>
+	<input type='button' value='fadeOut()' id='fadeOut'/>
+	<input type='button' value='fadeIn(5000)' id='fadeIn2'/>
+	<input type='button' value='fadeIn(3000,fn)' id='fadeIn3'/>
+	<script type="text/javascript">
+		//fadeIn
+		$('#fadeIn').click(function(){
+			$('#test').fadeIn("slow");
+		});
+		//fadeOut
+		$('#fadeOut').click(function(){
+			$('#test').fadeOut();
+		});
+		//fadeIn(3000)
+		$('#fadeIn2').click(function(){
+			$('#test').fadeIn(5000);
+		})
+		//fadeIn(3000,fn)
+		$('#fadeIn3').click(function(){
+			$('#test').fadeIn(3000,"swing",function(){
+				$('#test').css('background','yellow');
+			})
+		})
+	</script>
+</body>
+</html>

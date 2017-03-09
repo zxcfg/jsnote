@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>stop</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<button id="start">开始</button>
+	<button id="stop">停止</button>
+</body>
+<script>
+	$("#start").click(function(){
+		$("#box").animate({"marginLeft":"300px"},3000,function(){
+			$("#box").animate({"marginLeft":"600px"},1000)
+		}).animate({"marginTop":"100px"},3000)
+	});
+	$("#stop").click(function(){
+		$("#box").stop(true,true);
+	})
+</script>
+</html>

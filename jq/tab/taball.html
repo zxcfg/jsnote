@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .box{
+            width: 610px;
+            height: 240px;
+            margin:20px auto;
+            overflow: hidden;
+        }
+        .tit{
+            width: 610px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .tit span ,.tit em{
+            float: left;
+            width:198px;
+            height: 38px;
+            border:1px solid #000;
+            text-align:center;
+            line-height:38px;
+            cursor: pointer;
+        }
+        .tit span:hover,.tit em:hover{
+            color:red;
+        }
+        .con{
+            width: 600px;
+            height: 200px;
+        }
+        .con li{
+            width: 598px;
+            height: 198px;
+            border:1px solid #000000;
+            font-size: 80px;
+            line-height: 198px;
+            text-align:center;
+            display:none;
+        }
+        .tit .select{
+            background-color: #ccc;
+        }
+        .con .show{
+            display:block;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="box1" class="box">
+    <h1 class="tit">
+        <span class="select">标题1</span>
+        <span>标题2</span>
+        <span>标题3</span>
+    </h1>
+    <ul class="con">
+        <li class="show">内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+    </ul>
+</div>
+<div id="box2" class="box">
+    <h1 class="tit">
+        <span class="select">标题1</span>
+        <span>标题2</span>
+        <span>标题3</span>
+    </h1>
+    <ul class="con">
+        <li class="show">内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="../../jquery-1.8.3.min.js"></script>
+<script>
+    // 面向过程写法
+//    var box=document.getElementById('box1');
+//    var spans=box.getElementsByTagName('span');
+//    var lis=box.getElementsByTagName('li');
+//    for (var i=0;i<spans.length;i++){
+//        spans[i].onclick=function(){
+//            for(var i=0;i<lis.length;i++){
+//                if(this==spans[i]){
+//                    spans[i].className='select';
+//                    lis[i].className='show';
+//                }else{
+//                    spans[i].className='';
+//                    lis[i].className='';
+//                }
+//            }
+//        }
+//    }
+
+
+
+//JQ 写法
+//    $("#box1").find(".tit span").on("click",function(){
+//        var i=$(this).index();
+//        $(this).addClass('select').siblings().removeClass("select");
+//        $('#box1').find($('.con li')).eq(i).addClass('show').siblings().removeClass("show");
+//    })
+//    $('#box2').find('.tit span').on('click',function(){
+//        var i=$(this).index();
+//        $(this).addClass('select').siblings().removeClass('select');
+//        $('#box2').find($('.con li')).eq(i).addClass('show').siblings().removeClass('show');
+//    })
+
+
+
+    //JQ extend写法
+//    $.fn.extend({
+//        tab:function(){
+//            var _this=$(this);
+//            _this.find('.tit span').on('click',function(){
+//                var i=$(this).index();
+//                $(this).addClass("select").siblings().removeClass("select");
+//                _this.find($('.con li')).eq(i).addClass("show").siblings().removeClass('show');
+//            })
+//        }
+//    })
+//    $("#box1").tab();
+//    $("#box2").tab();
+
+
+
+//    //面向对象写法
+//    function createTab(boxId,titleName,contentName){
+//        this.box=document.getElementById(boxId);
+//        this.spans=this.box.getElementsByTagName(titleName);
+//        this.lis=this.box.getElementsByTagName(contentName);
+//        var _this=this;
+//        for(var i=0;i<this.spans.length;i++){
+//            this.spans[i].onclick=function(){
+//                _this.fnClick(this);
+//            }
+//        }
+//    }
+//    createTab.prototype.fnClick=function(tag){
+//        for(var j=0;j<this.spans.length;j++){
+//            if(tag==this.spans[j]){
+//                this.spans[j].className="select";
+//                this.lis[j].className="show";
+//            }else{
+//                this.spans[j].className="";
+//                this.lis[j].className="";
+//            }
+//        }
+//    };
+//    var tab1=new createTab('box1','span','li');
+//    var tab2=new createTab('box2','span','li');
+
+
+
+
+    //面向对象写法
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
